@@ -14,16 +14,17 @@ const getLetters = letter => {
 }
 
 const diamond = letter => {
-  const letterArray = getLetters(letter)
-  // const length = arr.length
-  // const initialSpaces = length
-  // return arr
-  //   .map((letter, index) => {
-  //     if (index === 0) return `${letter}\n`
-  //     if (index === 1) return `${letter} ${letter}\n`
-  //     if (index === 2) return `${letter}   ${letter}\n`
-  //   })
-  //   .join('')
+  const arr = getLetters(letter)
+
+  const length = arr.length
+  const initialSpaces = length
+  return arr
+    .map((letter, index) => {
+      if (index === 0) return `${letter}\n`
+      if (index === 1) return `${letter} ${letter}\n`
+      if (index === 2) return `${letter}   ${letter}\n`
+    })
+    .join('')
 }
 
 /**

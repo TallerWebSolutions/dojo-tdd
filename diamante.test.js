@@ -1,4 +1,4 @@
-const { /*diamond, */ getLetters } = require('./diamond.js')
+const { diamond, getLetters } = require('./diamond.js')
 
 describe('getLetters', () => {
   it('should return letters to be printed when given E', () => {
@@ -17,11 +17,11 @@ describe('getLetters', () => {
     expect(getLetters('f')).toEqual(['a', 'b', 'c', 'd', 'e', 'f'])
   })
 
-  // it('should return diamon from A', () => {
-  //   expect(diamond(['a'])).toEqual('a\na')
-  // })
+  it('should return diamon from A', () => {
+    expect(diamond(['a'])).toEqual('a\na')
+  })
 
-  // it('should return diamon from B', () => {
-  //   expect(diamond(['a', 'b'])).toEqual(' a \nb b\n a ')
-  // })
+  it('should return diamon from B', () => {
+    expect(diamond(['a', 'b'])).toEqual(' a \nb b\n a ')
+  })
 })
