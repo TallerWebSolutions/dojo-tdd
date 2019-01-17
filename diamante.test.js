@@ -26,7 +26,7 @@ describe('Diamonds', () => {
     }
 
     it('should return diamon from A', () => {
-      expect(diamond('a')).toEqual('a\na')
+      expect(diamond('a')).toEqual('a')
     })
 
     // it('should return diamon from B', () => {
