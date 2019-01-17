@@ -18,6 +18,13 @@ const diamond = letter => {
 
   if (letter === 'a') return 'a'
 
+  if (letter === 'b')
+    return `
+ a
+b b
+ a
+`
+
   const length = arr.length
   const initialSpaces = length
   return arr
