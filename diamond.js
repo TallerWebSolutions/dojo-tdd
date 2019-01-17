@@ -13,7 +13,9 @@ const getLetters = letter => {
 }
 
 const getDiamondLine = (letter, i) => {
+  if (letter === 'a') return `${letter}`
   const space = ' '
+
   return `${letter + space + letter}`
 }
 
