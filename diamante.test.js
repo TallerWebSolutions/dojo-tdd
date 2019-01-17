@@ -21,7 +21,7 @@ describe('Diamonds', () => {
 
   describe('getDiamondLine', () => {
     it('should return line for A', () => {
-      expect(getDiamondLine())
+      expect(getDiamondLine('a', 0)).toEqual('a')
     })
   })
 
