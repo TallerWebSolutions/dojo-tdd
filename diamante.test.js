@@ -18,10 +18,10 @@ describe('getLetters', () => {
   })
 
   it('should return diamon from A', () => {
-    expect(diamond(['a'])).toEqual('a\na')
+    expect(diamond('a')).toEqual('a\na')
   })
 
   it('should return diamon from B', () => {
-    expect(diamond(['a', 'b'])).toEqual(' a \nb b\n a ')
+    expect(diamond('b')).toEqual(' a \nb b\n a ')
   })
 })
