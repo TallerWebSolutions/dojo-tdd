@@ -1,6 +1,5 @@
 // lucas testando aqui!
 
-// RENATO
 const getLetters = letter => {
   const initial = 'a'.charCodeAt()
   const final = letter.charCodeAt()
@@ -12,6 +11,8 @@ const getLetters = letter => {
 
   return diamondLetters
 }
+
+const getDiamondLine = (letter, i) => `${letter}`
 
 const diamond = letter => {
   const arr = getLetters(letter)

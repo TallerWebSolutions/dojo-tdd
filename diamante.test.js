@@ -19,7 +19,13 @@ describe('Diamonds', () => {
     })
   })
 
-  describe.only('diamond', () => {
+  describe('getDiamondLine', () => {
+    it('should return line for A', () => {
+      expect(getDiamondLine())
+    })
+  })
+
+  describe('diamond', () => {
     const diamonds = {
       a: `a`,
       b: `
