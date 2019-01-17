@@ -1,7 +1,8 @@
 const { diamond, getLetters } = require('./diamond.js')
 
 const diamonds = {
-  a: 'a\na',
+  a: `a\na`,
+  a: `a\na`,
 }
 
 describe('getLetters', () => {
