@@ -12,15 +12,20 @@ const getLetters = letter => {
   return diamondLetters
 }
 
-const getDiamondLine = (letter, i) => {
+const getDiamondLine = (letter, i, len) => {
   if (letter === 'a') return `${letter}`
   let space = ''
+  let spaceBefore = ''
 
   for (let j = 0; j < i + (i - 1); j++) {
     space = space.concat(' ')
   }
 
-  return `${letter + space + letter}`
+  for (let j = 0; j < len; j++) {
+    spaceBefore = spaceBefore.concat(' ')
+  }
+
+  return `${spaceBefore + letter + space + letter}`
 }
 
 const diamond = letter => {
