@@ -1,0 +1,14 @@
+{
+  "name": "taller_dojo_tdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:TallerWebSolutions/dojo-tdd.git",
+  "author": "Sebastian Ferrari <sebas5384@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^23.6.0"
+  },
+  "scripts": {
+    "test:watch": "jest --watch"
+  }
+}
