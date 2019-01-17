@@ -21,12 +21,19 @@ describe('Diamonds', () => {
 
   describe.only('diamond', () => {
     const diamonds = {
-      a: `a\na`,
-      a: `a\na`,
+      a: `a`,
+      b: `
+ a
+b b
+ a`,
     }
 
     it('should return diamon from A', () => {
-      expect(diamond('a')).toEqual('a')
+      expect(diamond('a')).toEqual(diamonds.a)
+    })
+
+    it.only('should return diamon from B', () => {
+      expect(diamond('b')).toEqual(diamonds.b)
     })
 
     // it('should return diamon from B', () => {

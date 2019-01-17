@@ -16,6 +16,8 @@ const getLetters = letter => {
 const diamond = letter => {
   const arr = getLetters(letter)
 
+  if (letter === 'a') return 'a'
+
   const length = arr.length
   const initialSpaces = length
   return arr
