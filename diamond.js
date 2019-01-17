@@ -65,4 +65,5 @@ b b
 module.exports = {
   diamond,
   getLetters,
+  getDiamondLine,
 }

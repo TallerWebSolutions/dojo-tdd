@@ -1,4 +1,4 @@
-const { diamond, getLetters } = require('./diamond.js')
+const { diamond, getLetters, getDiamondLine } = require('./diamond.js')
 
 describe('Diamonds', () => {
   describe('getLetters', () => {
