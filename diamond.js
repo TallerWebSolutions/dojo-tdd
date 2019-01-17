@@ -16,7 +16,7 @@ const getDiamondLine = (letter, i) => {
   if (letter === 'a') return `${letter}`
   let space = ''
 
-  for (let j = 0; j <= i + i - 1; j++) {
+  for (let j = 0; j < i + (i - 1); j++) {
     space = space.concat(' ')
   }
 
