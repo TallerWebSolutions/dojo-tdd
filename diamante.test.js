@@ -48,7 +48,7 @@ b b
       expect(diamond('a')).toEqual(diamonds.a)
     })
 
-    it.only('should return diamon from B', () => {
+    it('should return diamon from B', () => {
       expect(diamond('b')).toEqual(diamonds.b)
     })
 
