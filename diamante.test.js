@@ -25,7 +25,8 @@ describe('Diamonds', () => {
       b: `
  a
 b b
- a`.replace(/^\\n/, ''),
+ a`.replace(/^\n/, ''),
+      f: ``,
     }
 
     it('should return diamon from A', () => {

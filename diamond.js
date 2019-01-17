@@ -19,11 +19,9 @@ const diamond = letter => {
   if (letter === 'a') return 'a'
 
   if (letter === 'b')
-    return `
- a
+    return ` a
 b b
- a
-`
+ a`
 
   const length = arr.length
   const initialSpaces = length
