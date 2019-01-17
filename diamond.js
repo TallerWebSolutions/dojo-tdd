@@ -13,7 +13,7 @@ const getLetters = letter => {
 }
 
 const getDiamondLine = (letter, i, len) => {
-  if (letter === 'a') return `${letter}`
+  // if (letter === 'a') return `${letter}`
   let space = ''
   let spaceBefore = ''
 
@@ -23,11 +23,8 @@ const getDiamondLine = (letter, i, len) => {
 
   // console.log(len - i - 1, 'hey')
   for (let j = len - i - 1; j > 0; j--) {
-    console.log({ j })
     spaceBefore = spaceBefore.concat(' ')
   }
-
-  // console.log(, 'hey')
 
   return `${spaceBefore + letter + space + letter}`
 }
