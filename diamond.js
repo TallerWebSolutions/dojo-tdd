@@ -12,7 +12,10 @@ const getLetters = letter => {
   return diamondLetters
 }
 
-const getDiamondLine = (letter, i) => `${letter}`
+const getDiamondLine = (letter, i) => {
+  const space = ' '
+  return `${letter + space + letter}`
+}
 
 const diamond = letter => {
   const arr = getLetters(letter)
