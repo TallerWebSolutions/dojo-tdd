@@ -1,5 +1,6 @@
 // lucas testando aqui!
 
+// RENATO
 const getLetters = letter => {
   const initial = 'a'.charCodeAt()
   const final = letter.charCodeAt()
@@ -12,18 +13,18 @@ const getLetters = letter => {
   return diamondLetters
 }
 
-const diamond = arr => {
-  const length = arr.length
-  const initialSpaces = length
+// const diamond = arr => {
+//   const length = arr.length
+//   const initialSpaces = length
 
-  return arr
-    .map((letter, index) => {
-      if (index === 0) return `${letter}\n`
-      if (index === 1) return `${letter} ${letter}\n`
-      if (index === 2) return `${letter}   ${letter}\n`
-    })
-    .join('')
-}
+//   return arr
+//     .map((letter, index) => {
+//       if (index === 0) return `${letter}\n`
+//       if (index === 1) return `${letter} ${letter}\n`
+//       if (index === 2) return `${letter}   ${letter}\n`
+//     })
+//     .join('')
+// }
 
 /**
  * Espaços dos lados
