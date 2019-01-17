@@ -1,5 +1,9 @@
 const { diamond, getLetters } = require('./diamond.js')
 
+const diamonds = {
+  a: 'a\na',
+}
+
 describe('getLetters', () => {
   it('should return letters to be printed when given E', () => {
     expect(getLetters('e')).toEqual(['a', 'b', 'c', 'd', 'e'])
@@ -18,10 +22,10 @@ describe('getLetters', () => {
   })
 
   it('should return diamon from A', () => {
-    expect(diamond('a')).toEqual('a\na')
+    expect(diamond('a')).toEqual(a)
   })
 
-  it('should return diamon from B', () => {
-    expect(diamond('b')).toEqual(' a \nb b\n a ')
-  })
+  // it('should return diamon from B', () => {
+  //   expect(diamond('b')).toEqual(' a \nb b\n a ')
+  // })
 })
