@@ -20,7 +20,7 @@ const makeSpacesBefore = (i, len) => {
 
 const makeSpacesBetween = (i, len) => {
   const spaces = i * 2 - 1
-  console.log(spaces)
+  console.log(i, spaces)
   return makeSpaces(spaces)
 }
 
