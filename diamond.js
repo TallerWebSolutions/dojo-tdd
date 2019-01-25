@@ -11,17 +11,11 @@ const getLetters = letter => {
   return diamondLetters
 }
 
-const makeSpaces = (n) => new Array(n).fill(' ').join('')
+const makeSpaces = n => new Array(n).fill(' ').join('')
 
-const makeSpacesBefore = (i, len) => {
-  return makeSpaces(len - i - 1)
-}
+const makeSpacesBefore = (i, len) => makeSpaces(len - i - 1)
 
-const makeSpacesBetween = (i, len) => {
-  const spaces = Math.max(0, i * 2 - 1)
-  console.log(i, spaces)
-  return makeSpaces(spaces)
-}
+const makeSpacesBetween = i => makeSpaces(Math.max(0, i * 2 - 1))
 
 const getDiamondLine = (letter, i, len) => {
   let space = ''
@@ -31,11 +25,6 @@ const getDiamondLine = (letter, i, len) => {
   for (let j = 0; j < i + (i - 1); j++) {
     space = space.concat(' ')
   }
-
-  // make spaces before letters
-  /* for (let j = len - i - 1; j > 0; j--) {
-    spaceBefore = spaceBefore.concat(' ')
-  } */
 
   if (letter == 'a') return `${spaceBefore}${letter}`
 
@@ -47,11 +36,11 @@ const makeLines = letter => {
   const result = letters.map((letter, index) => {
     return getDiamondLine(letter, index, letters.length)
   })
-  return [...result, ...result.reverse().slice(1)]  
+  return [...result, ...result.reverse().slice(1)]
 }
 
 const diamond = letter => {
-  const lines  = makeLines(letter)
+  const lines = makeLines(letter)
   return lines.join('\n')
 }
 
