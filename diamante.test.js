@@ -3,7 +3,7 @@ const {
   getLetters,
   mapDiamondLine,
   makeLines,
-  makeSpacesBefore,
+  spacesBefore,
   makeSpacesBetween,
 } = require('./diamond.js')
 
@@ -45,7 +45,7 @@ describe('Diamonds', () => {
 
   describe('make spaces before', () => {
     it('should return spaces for i 0, len 4', () => {
-      expect(makeSpacesBefore(0, 4)).toEqual('   ')
+      expect(spacesBefore(0, 4)).toEqual(3)
     })
   })
 
