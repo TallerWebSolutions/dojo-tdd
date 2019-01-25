@@ -31,19 +31,10 @@ const getDiamondLine = (letter, i, len) => {
 
 const makeLines = letter => {
   const letters = getLetters(letter)
-  // const arr = [
-  //   ...letters,
-  //   ...letters.reverse().slice(1)
-  // ]
   const result = letters.map((letter, index) => {
     return getDiamondLine(letter, index, letters.length)
   })
-  console.log(result)
-  // console.log(arr)
-  // return arr.map((letter, index) => {
-  //   return getDiamondLine(letter, index, arr.length)
-  // })
-  
+  return [...result, ...result.reverse().slice(1)]  
 }
 
 const diamond = letter => {
