@@ -38,7 +38,8 @@ const makeLines = letter => {
 }
 
 const diamond = letter => {
-
+  const lines  = makeLines(letter)
+  return lines.join('\n')
 }
 
 module.exports = {
