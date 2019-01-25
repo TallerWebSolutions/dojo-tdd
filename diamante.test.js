@@ -26,20 +26,20 @@ describe('Diamonds', () => {
     })
   })
 
-  describe.only('getDiamondLine given a letter and a length', () => {
-    const arrLen = 4
+  describe('getDiamondLine given a letter and a length', () => {
+    const arr = new Array(4)
 
     it('should return line for A', () => {
-      expect(getDiamondLine('a', 0, arrLen)).toEqual('   a')
+      expect(getDiamondLine('a', 0, arr)).toEqual('   a')
     })
     it('should return line for B', () => {
-      expect(getDiamondLine('b', 1, arrLen)).toEqual('  b b')
+      expect(getDiamondLine('b', 1, arr)).toEqual('  b b')
     })
     it('should return line for C', () => {
-      expect(getDiamondLine('c', 2, arrLen)).toEqual(' c   c')
+      expect(getDiamondLine('c', 2, arr)).toEqual(' c   c')
     })
     it('should return line for D', () => {
-      expect(getDiamondLine('d', 3, arrLen)).toEqual('d     d')
+      expect(getDiamondLine('d', 3, arr)).toEqual('d     d')
     })
   })
 
