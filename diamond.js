@@ -39,23 +39,6 @@ const makeLines = letter => {
 
 const diamond = letter => {
 
-//   if (letter === 'a') return 'a'
-
-//   if (letter === 'b')
-//     return ` a
-// b b
-//  a`
-
-
-  // const length = arr.length
-  // const initialSpaces = length
-  // return arr
-  //   .map((letter, index) => {
-  //     if (index === 0) return `${letter}\n`
-  //     if (index === 1) return `${letter} ${letter}\n`
-  //     if (index === 2) return `${letter}   ${letter}\n`
-  //   })
-  //   .join('')
 }
 
 module.exports = {
