@@ -10,12 +10,13 @@ const getLetters = letter => {
 }
 
 const makeSpaces = n => new Array(n).fill(' ').join('')
-const makeSpacesBefore = (i, len) => makeSpaces(len - i - 1)
-const makeSpacesBetween = i => makeSpaces(Math.max(0, i * 2 - 1))
+
+const spacesBefore = (i, len) => len - i - 1
+const spacedBetween = i => Math.max(0, i * 2 - 1)
 
 const mapDiamondLine = (letter, i, arr) => {
-  const spaceBefore = makeSpacesBefore(i, arr.length)
-  const spaceBetween = makeSpacesBetween(i)
+  const spaceBefore = makeSpaces(spacesBefore(i, arr.length))
+  const spaceBetween = makeSpaces(spacedBetween(i))
 
   return i === 0
     // first letter appear only once.
