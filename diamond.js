@@ -13,7 +13,7 @@ const makeSpaces = n => new Array(n).fill(' ').join('')
 const makeSpacesBefore = (i, len) => makeSpaces(len - i - 1)
 const makeSpacesBetween = i => makeSpaces(Math.max(0, i * 2 - 1))
 
-const getDiamondLine = (letter, i, arr) => {
+const mapDiamondLine = (letter, i, arr) => {
   const spaceBefore = makeSpacesBefore(i, arr.length)
   const spaceBetween = makeSpacesBetween(i)
 
@@ -25,7 +25,7 @@ const getDiamondLine = (letter, i, arr) => {
 const makeLines = letter => {
   const letters = getLetters(letter)
 
-  const result = letters.map(getDiamondLine)
+  const result = letters.map(mapDiamondLine)
 
   return [...result, ...result.reverse().slice(1)]
 }
@@ -35,7 +35,7 @@ const diamond = letter => makeLines(letter).join('\n')
 module.exports = {
   diamond,
   getLetters,
-  getDiamondLine,
+  mapDiamondLine,
   makeLines,
   makeSpacesBefore,
   makeSpacesBetween,
