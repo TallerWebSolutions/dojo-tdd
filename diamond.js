@@ -11,24 +11,24 @@ const getLetters = letter => {
   return diamondLetters
 }
 
-const makeSpaces = (i, len) => {
+const makeSpacesBefore = (i, len) => {
   const spaces = len - i - 1
   return Array.from(Array(spaces)).fill(' ').join('')
 }
 
 const getDiamondLine = (letter, i, len) => {
-  let space = makeSpaces(i, len)
-  let spaceBefore = ''
+  let space = ''
+  let spaceBefore = makeSpacesBefore(i, len)
 
   // make spaces between letters
-  /* for (let j = 0; j < i + (i - 1); j++) {
+  for (let j = 0; j < i + (i - 1); j++) {
     space = space.concat(' ')
-  } */
+  }
 
   // make spaces before letters
-  for (let j = len - i - 1; j > 0; j--) {
+  /* for (let j = len - i - 1; j > 0; j--) {
     spaceBefore = spaceBefore.concat(' ')
-  }
+  } */
 
   if (letter == 'a') return `${spaceBefore}${letter}`
 
@@ -53,5 +53,5 @@ module.exports = {
   getLetters,
   getDiamondLine,
   makeLines,
-  makeSpaces,
+  makeSpacesBefore,
 }

@@ -43,10 +43,8 @@ describe('Diamonds', () => {
   })
 
   describe('make spaces before', () => {
-    it('should return spaces', () => {
-      const arrLen = 4
-
-      expect(makeSpacesBefore(0, arrLen)).toEqual('   ')
+    it('should return spaces for i 0, len 4', () => {
+      expect(makeSpacesBefore(0, 4)).toEqual('   ')
     })
   })
 
