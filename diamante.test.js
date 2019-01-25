@@ -49,6 +49,10 @@ describe('Diamonds', () => {
     it('should return lines for b', () => {
       expect(makeLines('b')).toEqual([' a', 'b b', ' a'])
     })
+    it('should return lines for b', () => {
+      expect(makeLines('c')).toEqual(['  a', ' b b','c   c', ' b b','  a'])
+    })
+
   })
 
 //   describe('diamond', () => {
