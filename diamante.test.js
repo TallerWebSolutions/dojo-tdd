@@ -50,15 +50,15 @@ describe('Diamonds', () => {
   })
 
   describe('make spaces betweein', () => {
-    it.only('should return empty spaces for letter A(0))', () => {
+    it('should return empty spaces for letter A(0))', () => {
       expect(makeSpacesBetween(0, 4)).toEqual('')
     })
 
-    it.only('should return empty spaces for letter B(1)', () => {
+    it('should return empty spaces for letter B(1)', () => {
       expect(makeSpacesBetween(1, 4)).toEqual(' ')
     })
 
-    it.only('should return empty spaces for letter C(3)', () => {
+    it('should return empty spaces for letter C(3)', () => {
       expect(makeSpacesBetween(2, 4)).toEqual('   ')
     })
   })
