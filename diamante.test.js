@@ -2,7 +2,8 @@ const {
   diamond,
   getLetters,
   getDiamondLine,
-  makeLines
+  makeLines,
+  makeSpaces,
 } = require('./diamond.js')
 
 describe('Diamonds', () => {
@@ -38,6 +39,14 @@ describe('Diamonds', () => {
     })
     it('should return line for D', () => {
       expect(getDiamondLine('d', 3, arrLen)).toEqual('d     d')
+    })
+  })
+
+  describe('make spaces', () => {
+    it('should return spaces', () => {
+      const arrLen = 4
+
+      expect(makeSpaces(0, arrLen)).toEqual('   ')
     })
   })
 
