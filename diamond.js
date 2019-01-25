@@ -17,9 +17,9 @@ const makeSpacesBefore = (i, len) => makeSpaces(len - i - 1)
 
 const makeSpacesBetween = i => makeSpaces(Math.max(0, i * 2 - 1))
 
-const getDiamondLine = (letter, i, len) => {
+const getDiamondLine = (letter, i, arr) => {
   let space = ''
-  let spaceBefore = makeSpacesBefore(i, len)
+  let spaceBefore = makeSpacesBefore(i, arr.length)
 
   // make spaces between letters
   for (let j = 0; j < i + (i - 1); j++) {
@@ -33,9 +33,9 @@ const getDiamondLine = (letter, i, len) => {
 
 const makeLines = letter => {
   const letters = getLetters(letter)
-  const result = letters.map((letter, index) => {
-    return getDiamondLine(letter, index, letters.length)
-  })
+
+  const result = letters.map(getDiamondLine)
+
   return [...result, ...result.reverse().slice(1)]
 }
 
