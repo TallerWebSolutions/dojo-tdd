@@ -17,13 +17,13 @@ const makeSpaces = (i, len) => {
 }
 
 const getDiamondLine = (letter, i, len) => {
-  let space = ''
+  let space = makeSpaces(i, len)
   let spaceBefore = ''
 
   // make spaces between letters
-  for (let j = 0; j < i + (i - 1); j++) {
+  /* for (let j = 0; j < i + (i - 1); j++) {
     space = space.concat(' ')
-  }
+  } */
 
   // make spaces before letters
   for (let j = len - i - 1; j > 0; j--) {
