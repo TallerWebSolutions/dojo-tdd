@@ -1,7 +1,7 @@
 const {
   diamond,
   getLetters,
-  getDiamondLine,
+  mapDiamondLine,
   makeLines,
   makeSpacesBefore,
   makeSpacesBetween,
@@ -26,20 +26,20 @@ describe('Diamonds', () => {
     })
   })
 
-  describe('getDiamondLine given a letter and a length', () => {
+  describe('mapDiamondLine given a letter and a length', () => {
     const arr = new Array(4)
 
     it('should return line for A', () => {
-      expect(getDiamondLine('a', 0, arr)).toEqual('   a')
+      expect(mapDiamondLine('a', 0, arr)).toEqual('   a')
     })
     it('should return line for B', () => {
-      expect(getDiamondLine('b', 1, arr)).toEqual('  b b')
+      expect(mapDiamondLine('b', 1, arr)).toEqual('  b b')
     })
     it('should return line for C', () => {
-      expect(getDiamondLine('c', 2, arr)).toEqual(' c   c')
+      expect(mapDiamondLine('c', 2, arr)).toEqual(' c   c')
     })
     it('should return line for D', () => {
-      expect(getDiamondLine('d', 3, arr)).toEqual('d     d')
+      expect(mapDiamondLine('d', 3, arr)).toEqual('d     d')
     })
   })
 
