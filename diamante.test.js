@@ -62,8 +62,13 @@ describe('Diamonds', () => {
  a
 b b
  a`.replace(/^\n/, ''),
-      f: ``,
-    }
+      c: `
+  a
+ b b
+c   c
+ b b
+  a`.replace(/^\n/, ''),
+    },
 
     it('should return diamond from A', () => {
       expect(diamond('a')).toEqual(diamonds.a)
@@ -73,8 +78,8 @@ b b
       expect(diamond('b')).toEqual(diamonds.b)
     })
 
-    // it('should return diamon from B', () => {
-    //   expect(diamond('b')).toEqual(' a \nb b\n a ')
-    // })
+    it('should return diamon from B', () => {
+      expect(diamond('c')).toEqual(' a \nb b\n a ')
+    })
   })
 })
