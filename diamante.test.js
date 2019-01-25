@@ -68,18 +68,19 @@ b b
 c   c
  b b
   a`.replace(/^\n/, ''),
-    },
+    };
 
     it('should return diamond from A', () => {
       expect(diamond('a')).toEqual(diamonds.a)
+
     })
 
     it('should return diamond from B', () => {
       expect(diamond('b')).toEqual(diamonds.b)
     })
 
-    it('should return diamon from B', () => {
-      expect(diamond('c')).toEqual(' a \nb b\n a ')
+    it('should return diamond from C', () => {
+      expect(diamond('c')).toEqual(diamonds.c)
     })
   })
 })
