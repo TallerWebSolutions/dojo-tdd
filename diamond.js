@@ -12,6 +12,11 @@ const getLetters = letter => {
   return diamondLetters
 }
 
+const makeSpaces = (i, len) => {
+  const spaces = len - i - 1
+  return Array.from(Array(spaces)).fill(' ').join('')
+}
+
 const getDiamondLine = (letter, i, len) => {
   let space = ''
   let spaceBefore = ''
@@ -49,4 +54,5 @@ module.exports = {
   getLetters,
   getDiamondLine,
   makeLines,
+  makeSpaces,
 }
