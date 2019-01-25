@@ -16,15 +16,17 @@ const getDiamondLine = (letter, i, len) => {
   let space = ''
   let spaceBefore = ''
 
+  // make spaces between letters
   for (let j = 0; j < i + (i - 1); j++) {
     space = space.concat(' ')
   }
 
+  // make spaces before letters
   for (let j = len - i - 1; j > 0; j--) {
     spaceBefore = spaceBefore.concat(' ')
   }
 
-  // if (letter == 'a') return `${spaceBefore}${letter}`
+  if (letter == 'a') return `${spaceBefore}${letter}`
 
   return `${spaceBefore}${letter}${space}${letter}`
 }
