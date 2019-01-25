@@ -1,4 +1,9 @@
-const { diamond, getLetters, getDiamondLine } = require('./diamond.js')
+const {
+  diamond,
+  getLetters,
+  getDiamondLine,
+  makeLines
+} = require('./diamond.js')
 
 describe('Diamonds', () => {
   describe('getLetters', () => {
@@ -19,7 +24,7 @@ describe('Diamonds', () => {
     })
   })
 
-  describe('getDiamondLine given an array [a,b,c,d]', () => {
+  describe('getDiamondLine given a letter and a length', () => {
     const arrLen = 4
 
     it('should return line for A', () => {
@@ -36,26 +41,36 @@ describe('Diamonds', () => {
     })
   })
 
-  describe('diamond', () => {
-    const diamonds = {
-      a: `a`,
-      b: `
- a
-b b
- a`.replace(/^\n/, ''),
-      f: ``,
-    }
-
-    it('should return diamon from A', () => {
-      expect(diamond('a')).toEqual(diamonds.a)
+  describe('make lines', () => {
+    it('should return lines for a', () => {
+      expect(makeLines('a')).toEqual(['a'])
     })
 
-    it('should return diamon from B', () => {
-      expect(diamond('b')).toEqual(diamonds.b)
+    it('should return lines for b', () => {
+      expect(makeLines('b')).toEqual([' a', 'b b', ' a'])
     })
-
-    // it('should return diamon from B', () => {
-    //   expect(diamond('b')).toEqual(' a \nb b\n a ')
-    // })
   })
+
+//   describe('diamond', () => {
+//     const diamonds = {
+//       a: `a`,
+//       b: `
+//  a
+// b b
+//  a`.replace(/^\n/, ''),
+//       f: ``,
+//     }
+
+//     it('should return diamond from A', () => {
+//       expect(diamond('a')).toEqual(diamonds.a)
+//     })
+
+//     it('should return diamond from B', () => {
+//       expect(diamond('b')).toEqual(diamonds.b)
+//     })
+
+//     // it('should return diamon from B', () => {
+//     //   expect(diamond('b')).toEqual(' a \nb b\n a ')
+//     // })
+//   })
 })
