@@ -12,11 +12,11 @@ const getLetters = letter => {
 const makeSpaces = n => new Array(n).fill(' ').join('')
 
 const spacesBefore = (i, len) => len - i - 1
-const spacedBetween = i => Math.max(0, i * 2 - 1)
+const spacesBetween = i => Math.max(0, i * 2 - 1)
 
 const mapDiamondLine = (letter, i, arr) => {
   const spaceBefore = makeSpaces(spacesBefore(i, arr.length))
-  const spaceBetween = makeSpaces(spacedBetween(i))
+  const spaceBetween = makeSpaces(spacesBetween(i))
 
   return i === 0
     // first letter appear only once.
@@ -39,6 +39,6 @@ module.exports = {
   getLetters,
   mapDiamondLine,
   makeLines,
-  makeSpacesBefore,
-  makeSpacesBetween,
+  spacesBefore,
+  spacesBetween,
 }
