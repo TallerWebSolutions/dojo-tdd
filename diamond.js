@@ -19,7 +19,7 @@ const makeSpacesBefore = (i, len) => {
 }
 
 const makeSpacesBetween = (i, len) => {
-  const spaces = (i + 1) - 1
+  const spaces = Math.max(0, i * 2 - 1)
   console.log(i, spaces)
   return makeSpaces(spaces)
 }
