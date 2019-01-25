@@ -11,9 +11,11 @@ const getLetters = letter => {
   return diamondLetters
 }
 
+const makeSpaces = (n) =>
+  Array.from(Array(n)).fill(' ').join('')
+
 const makeSpacesBefore = (i, len) => {
-  const spaces = len - i - 1
-  return Array.from(Array(spaces)).fill(' ').join('')
+  return makeSpaces(len - i - 1)
 }
 
 const getDiamondLine = (letter, i, len) => {
