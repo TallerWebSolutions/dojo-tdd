@@ -26,7 +26,7 @@ const getDiamondLine = (letter, i, arr) => {
     space = space.concat(' ')
   }
 
-  if (letter == 'a') return `${spaceBefore}${letter}`
+  // if (letter == 'a') return `${spaceBefore}${letter}`
 
   return `${spaceBefore}${letter}${space}${letter}`
 }
@@ -39,10 +39,7 @@ const makeLines = letter => {
   return [...result, ...result.reverse().slice(1)]
 }
 
-const diamond = letter => {
-  const lines = makeLines(letter)
-  return lines.join('\n')
-}
+const diamond = letter => makeLines(letter).join('\n')
 
 module.exports = {
   diamond,
