@@ -18,8 +18,9 @@ const mapDiamondLine = (letter, i, arr) => {
   const spaceBetween = makeSpacesBetween(i)
 
   return i === 0
-    // first letter appear only onde
+    // first letter appear only once.
     ? `${spaceBefore}${letter}`
+    // further letters repeat on each line.
     : `${spaceBefore}${letter}${spaceBetween}${letter}`
 }
 
