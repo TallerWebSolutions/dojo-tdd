@@ -26,7 +26,6 @@ const mapDiamondLine = (letter, i, arr) => {
 
 const makeLines = letter => {
   const letters = getLetters(letter)
-
   const result = letters.map(mapDiamondLine)
 
   return [...result, ...result.reverse().slice(1)]
