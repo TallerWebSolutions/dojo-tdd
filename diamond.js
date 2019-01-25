@@ -17,9 +17,10 @@ const mapDiamondLine = (letter, i, arr) => {
   const spaceBefore = makeSpacesBefore(i, arr.length)
   const spaceBetween = makeSpacesBetween(i)
 
-  // if (i === 0) return `${spaceBefore}${letter}`
-
-  return `${spaceBefore}${letter}${spaceBetween}${i > 0 ? letter : ''}`
+  return i === 0
+    // first letter appear only onde
+    ? `${spaceBefore}${letter}`
+    : `${spaceBefore}${letter}${spaceBetween}${letter}`
 }
 
 const makeLines = letter => {
