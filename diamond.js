@@ -24,7 +24,7 @@ const getDiamondLine = (letter, i, len) => {
     spaceBefore = spaceBefore.concat(' ')
   }
 
-  if (i === 0 || i+1 === len) return `${spaceBefore + letter}`
+  if (i === 0) return `${spaceBefore + letter}`
 
   return `${spaceBefore + letter + space + letter}`
 }
@@ -35,6 +35,7 @@ const makeLines = letter => {
     ...letters,
     ...letters.reverse().slice(1)
   ]
+  console.log(arr)
   return arr.map((letter, index) => {
     return getDiamondLine(letter, index, arr.length)
   })
