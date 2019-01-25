@@ -61,4 +61,5 @@ module.exports = {
   getDiamondLine,
   makeLines,
   makeSpacesBefore,
+  makeSpacesBetween,
 }
