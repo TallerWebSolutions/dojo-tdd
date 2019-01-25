@@ -11,8 +11,7 @@ const getLetters = letter => {
   return diamondLetters
 }
 
-const makeSpaces = (n) =>
-  Array.from(Array(n)).fill(' ').join('')
+const makeSpaces = (n) => new Array(n).fill(' ').join('')
 
 const makeSpacesBefore = (i, len) => {
   return makeSpaces(len - i - 1)
