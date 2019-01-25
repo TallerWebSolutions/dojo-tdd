@@ -24,7 +24,7 @@ const getDiamondLine = (letter, i, len) => {
     spaceBefore = spaceBefore.concat(' ')
   }
 
-  if (i === 0 ) return `${spaceBefore + letter}`
+  if (i === 0 || i === len) return `${spaceBefore + letter}`
 
   return `${spaceBefore + letter + space + letter}`
 }
