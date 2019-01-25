@@ -4,8 +4,7 @@ const getLetters = letter => {
   const initial = 'a'.charCodeAt()
   const final = letter.charCodeAt()
   const gap = final - initial
-  const diamondLetters = Array.from({ length: gap + 1 })
-    .fill()
+  const diamondLetters = Array.from(Array(gap + 1))
     .map((_, key) => initial + key)
     .map(charCode => String.fromCharCode(charCode))
 
