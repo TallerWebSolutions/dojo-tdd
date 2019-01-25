@@ -26,7 +26,7 @@ describe('Diamonds', () => {
     })
   })
 
-  describe('getDiamondLine given a letter and a length', () => {
+  describe.only('getDiamondLine given a letter and a length', () => {
     const arrLen = 4
 
     it('should return line for A', () => {

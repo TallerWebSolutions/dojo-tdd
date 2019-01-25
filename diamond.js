@@ -18,6 +18,8 @@ const makeSpacesBefore = (i, len) => makeSpaces(len - i - 1)
 const makeSpacesBetween = i => makeSpaces(Math.max(0, i * 2 - 1))
 
 const getDiamondLine = (letter, i, arr) => {
+  console.log({arr})
+
   let space = ''
   let spaceBefore = makeSpacesBefore(i, arr.length)
 
