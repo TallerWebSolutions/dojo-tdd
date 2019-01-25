@@ -4,7 +4,7 @@ const {
   mapDiamondLine,
   makeLines,
   spacesBefore,
-  makeSpacesBetween,
+  spacesBetween,
 } = require('./diamond.js')
 
 describe('Diamonds', () => {
@@ -51,15 +51,15 @@ describe('Diamonds', () => {
 
   describe('make spaces betweein', () => {
     it('should return empty spaces for letter A(0))', () => {
-      expect(makeSpacesBetween(0, 4)).toEqual('')
+      expect(spacesBetween(0, 4)).toEqual(0)
     })
 
     it('should return empty spaces for letter B(1)', () => {
-      expect(makeSpacesBetween(1, 4)).toEqual(' ')
+      expect(spacesBetween(1, 4)).toEqual(1)
     })
 
     it('should return empty spaces for letter C(3)', () => {
-      expect(makeSpacesBetween(2, 4)).toEqual('   ')
+      expect(spacesBetween(2, 4)).toEqual(3)
     })
   })
 
