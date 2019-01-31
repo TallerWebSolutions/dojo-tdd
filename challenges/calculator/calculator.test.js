@@ -6,4 +6,22 @@ describe('calculator', () => {
       expect(sum(1, 1)).toBe(2)
     })
   })
+
+  describe('subtract', () => {
+    it('should subtract two integers', () => {
+      expect(subtract(1, 1)).toBe(0)
+    })
+  })
+
+  describe('multiply', () => {
+    it('should multiply two integers', () => {
+      expect(multiply(2, 2)).toBe(4)
+    })
+  })
+
+  describe('divide', () => {
+    it('should divide two integers', () => {
+      expect(divide(4, 2)).toBe(2)
+    })
+  })
 })
