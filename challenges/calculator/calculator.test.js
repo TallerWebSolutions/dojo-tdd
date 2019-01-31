@@ -39,7 +39,7 @@ describe('calculator', () => {
     })
 
     it('should multiply two floats', () => {
-      expect(subtract(2.5, 1.5)).toBe(1)
+      expect(multiply(2.5, 1.5)).toBe(3.75)
     })
   })
 
