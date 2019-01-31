@@ -1,4 +1,4 @@
-const { s } = require('./calculator')
+const { su } = require('./calculator')
 
 describe('calculator', () => {
   describe('calc', () => {
