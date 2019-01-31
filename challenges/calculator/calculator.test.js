@@ -67,7 +67,7 @@ describe('calculator', () => {
     })
   })
 
-  describe.only('exec', ()=> {
+  describe('exec', ()=> {
     describe('sum', () => {
       it('should return 2 when 1 + 1', () => {
         expect(exec('1+1')).toBe(2)
