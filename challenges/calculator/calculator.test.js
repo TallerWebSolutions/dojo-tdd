@@ -55,6 +55,12 @@ describe('calculator', () => {
     })
   })
 
+  describe.only('getOperator', ()=> {
+    it('should return a sum when input is "+"', () => {
+      expect(getOperator('+')(2, 2)).toBe(4)
+    })
+  })
+
   describe('exec', ()=> {
     describe('sum', () => {
       it('should return 2 when 1 + 1', () => {
