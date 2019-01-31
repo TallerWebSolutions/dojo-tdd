@@ -21,7 +21,9 @@ const getOperator = char => (a, b) => {
     case '-':
       return subtract(a, b)
       break;
-
+    case '*':
+      return multiply(a, b)
+      break;
   }
 }
 
