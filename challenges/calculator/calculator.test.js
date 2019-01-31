@@ -54,4 +54,9 @@ describe('calculator', () => {
       expect(divide(10, -2)).toBe(-5)
     })
   })
+
+  describe('String as input', ()=> {
+
+  })
+
 })
