@@ -12,6 +12,7 @@ const divide = (a, b) => {
 }
 
 const exec = str => {
+  const operator = str[1]
   return str === '1+1' ? 2 : 3
 }
 
