@@ -25,13 +25,21 @@ describe('calculator', () => {
     })
 
     it('should subtract two floats', () => {
-      expect(subtract(1, 1.5)).toBe(2.5)
+      expect(subtract(2.5, 1.5)).toBe(1)
     })
   })
 
   describe('multiply', () => {
     it('should multiply two integers', () => {
       expect(multiply(2, 2)).toBe(4)
+    })
+
+    it('should multiply two negative integers', () => {
+      expect(multiply(-1, 2)).toBe(-3)
+    })
+
+    it('should subtract two floats', () => {
+      expect(subtract(2.5, 1.5)).toBe(1)
     })
   })
 
