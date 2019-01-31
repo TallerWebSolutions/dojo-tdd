@@ -64,6 +64,11 @@ describe('calculator', () => {
         expect(exec('2+1')).toBe(3)
       })
     })
+    describe('subtract', () => {
+      it('should return 0 when 1 - 1', () => {
+        expect(exec('1-1')).toBe(0)
+      })
+    })
   })
 
 })
