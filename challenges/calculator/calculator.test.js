@@ -1,4 +1,4 @@
-const { sum, subtract, multiply, divide } = require('./calculator')
+const { sum, subtract, multiply, divide, exec } = require('./calculator')
 
 describe('calculator', () => {
   describe('sum', () => {
@@ -55,8 +55,10 @@ describe('calculator', () => {
     })
   })
 
-  describe('String as input', ()=> {
-
+  describe('exec', ()=> {
+    it('should return 2 when 1 + 1', () => {
+      expect(exec('1+1')).toBe(2)
+    })
   })
 
 })

@@ -11,9 +11,12 @@ const divide = (a, b) => {
   return a / b
 }
 
+const exec = str => 2
+
 module.exports = {
   sum,
   subtract,
   multiply,
-  divide
+  divide,
+  exec
 }
