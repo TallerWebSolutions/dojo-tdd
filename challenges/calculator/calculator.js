@@ -11,8 +11,9 @@ const divide = (a, b) => {
   return a / b
 }
 
-const getOperator = char => {
-  
+
+const getOperator = char => (a, b) => {
+  return sum(a, b)
 }
 
 const exec = str => {
