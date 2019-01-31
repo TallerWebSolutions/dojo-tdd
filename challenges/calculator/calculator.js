@@ -24,6 +24,9 @@ const getOperator = char => (a, b) => {
     case '*':
       return multiply(a, b)
       break;
+    case '/':
+      return divide(a, b)
+      break;
   }
 }
 
