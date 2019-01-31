@@ -7,7 +7,7 @@ const multiply = (a, b) => a * b
 const divide = (a, b) => {
 
   if(b === 0)
-    return new Error({message: "Impossível dividir por zero"})
+    throw new Error("Impossível dividir por zero")
   return a / b
 }
 
