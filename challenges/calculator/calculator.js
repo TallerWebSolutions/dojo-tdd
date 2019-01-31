@@ -9,5 +9,6 @@ const divide = (a, b) => a / b
 module.exports = {
   sum,
   subtract,
-  multiply
+  multiply,
+  divide
 }
