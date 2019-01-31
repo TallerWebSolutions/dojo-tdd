@@ -63,7 +63,7 @@ describe('calculator', () => {
       expect(getOperator('-')(2, 2)).toBe(0)
     })
     it('should throw an error when operator is not valid', () => {
-      expect(getOperator('@')).toThrowError("Operador não é válido.")
+      expect(() => getOperator('@')).toThrowError("Operador não é válido.")
     })
   })
 
