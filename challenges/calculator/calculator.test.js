@@ -5,6 +5,10 @@ describe('calculator', () => {
     it('should sum two integers', () => {
       expect(sum(1, 1)).toBe(2)
     })
+
+    it('should sum two floats', () => {
+      expect(sum(1, 1.5)).toBe(2.5)
+    })
   })
 
   describe('subtract', () => {
