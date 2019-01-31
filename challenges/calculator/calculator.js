@@ -11,6 +11,8 @@ const divide = (a, b) => {
   return a / b
 }
 
+const getOperator = () => {}
+
 const exec = str => {
   const operator = str[1]
   return str === '1+1' ? 2 : 3
@@ -18,8 +20,9 @@ const exec = str => {
 
 module.exports = {
   sum,
+  exec,
+  divide,
   subtract,
   multiply,
-  divide,
-  exec
+  getOperator
 }

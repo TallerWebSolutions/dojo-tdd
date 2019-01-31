@@ -1,4 +1,4 @@
-const { sum, subtract, multiply, divide, exec } = require('./calculator')
+const { sum, subtract, multiply, divide, exec, getOperator } = require('./calculator')
 
 describe('calculator', () => {
   describe('sum', () => {
@@ -58,6 +58,12 @@ describe('calculator', () => {
   describe.only('getOperator', ()=> {
     it('should return a sum when input is "+"', () => {
       expect(getOperator('+')(2, 2)).toBe(4)
+    })
+    it('should return a subtract when input is "-"', () => {
+      expect(getOperator('-')(2, 2)).toBe(0)
+    })
+    it('should throw an error when operator is not valid', () => {
+      expect(getOperator('@')).toThrowError("Operador não é válido.")
     })
   })
 
