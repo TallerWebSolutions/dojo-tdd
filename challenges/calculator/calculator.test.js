@@ -48,7 +48,7 @@ describe('calculator', () => {
       expect(divide(4, 2)).toBe(2)
     })
     it('should return 0 on 10/0', () => {
-      expect(divide(10, 0)).toBe(0)
+      expect(() => divide(10, 0)).toThrowError("Impossível dividir por zero")
     })
   })
 })
