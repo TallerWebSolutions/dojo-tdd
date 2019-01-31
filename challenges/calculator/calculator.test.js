@@ -56,8 +56,13 @@ describe('calculator', () => {
   })
 
   describe('exec', ()=> {
-    it('should return 2 when 1 + 1', () => {
-      expect(exec('1+1')).toBe(2)
+    describe('sum', () => {
+      it('should return 2 when 1 + 1', () => {
+        expect(exec('1+1')).toBe(2)
+      })
+      it('should return 3 when 2 + 1', () => {
+        expect(exec('2+1')).toBe(3)
+      })
     })
   })
 
