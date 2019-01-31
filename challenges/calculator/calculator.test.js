@@ -6,14 +6,26 @@ describe('calculator', () => {
       expect(sum(1, 1)).toBe(2)
     })
 
+    it('should sum two negative integers', () => {
+      expect(sum(-1, 2)).toBe(1)
+    })
+
     it('should sum two floats', () => {
-      expect(sum(1, 1.5)).toBe(2.5)
+      expect(sum(1.4, 1.5)).toBe(2.9)
     })
   })
 
   describe('subtract', () => {
     it('should subtract two integers', () => {
       expect(subtract(1, 1)).toBe(0)
+    })
+
+    it('should subtract two negative integers', () => {
+      expect(subtract(-1, 2)).toBe(-3)
+    })
+
+    it('should subtract two floats', () => {
+      expect(subtract(1, 1.5)).toBe(2.5)
     })
   })
 
