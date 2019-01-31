@@ -13,7 +13,7 @@ const divide = (a, b) => {
 
 
 const getOperator = char => (a, b) => {
-  return sum(a, b)
+  return char === '+' ? sum(a, b) : subtract(a, b)
 }
 
 const exec = str => {
