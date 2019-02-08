@@ -63,7 +63,7 @@ describe('calculator', () => {
     })
   })
 
-  describe('getOperatorFunc', ()=> {
+  describe.only('getOperatorFunc', ()=> {
     it('should return a sum when input is "+"', () => {
       expect(getOperatorFunc('+')(2, 2)).toBe(4)
     })
