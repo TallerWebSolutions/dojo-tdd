@@ -30,6 +30,8 @@ const getOperator = char => (a, b) => {
 const extractOperator = () => '+'
 
 const exec = str => {
+  const operator = /\D/.match(str)
+
   return str === '1+1' ? 2 : 3
 }
 
