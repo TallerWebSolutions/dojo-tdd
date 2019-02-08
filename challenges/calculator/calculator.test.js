@@ -101,6 +101,11 @@ describe('calculator', () => {
     it('should return nothing when no operator found', () => {
       expect(extractOperator('11')).toBe(null)
     })
+
+    it('should throw an error when the operator is not supported', () => {
+      expect(() => extractOperator('1d1'))
+        .toThrowError('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
+    })
   })
 
   describe('exec', ()=> {
