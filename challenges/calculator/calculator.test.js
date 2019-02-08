@@ -73,6 +73,12 @@ describe('calculator', () => {
     // })
   })
 
+  describe.only('extract operator', () => {
+    it('should return plus operator for sum', () => {
+      expect(extractOperator('1+1')).toBe('+')
+    })
+  })
+
   describe('exec', ()=> {
     describe('sum', () => {
       it('should return 2 when 1 + 1', () => {
@@ -82,7 +88,7 @@ describe('calculator', () => {
         expect(exec('2+1')).toBe(3)
       })
     })
-    describe.only('subtract', () => {
+    describe('subtract', () => {
       it('should return 0 when 1 - 1', () => {
         expect(exec('1-1')).toBe(0)
       })
