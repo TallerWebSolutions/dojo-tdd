@@ -45,8 +45,8 @@ const extractOperator = str => {
 }
 
 const exec = expression => {
-  const operator = extractOperator(expression)
-  return str === '1+1' ? 2 : 3
+  const operatorFunc = getOperator(extractOperator(expression))
+  return expression === '1+1' ? 2 : 3
 }
 
 module.exports = {
