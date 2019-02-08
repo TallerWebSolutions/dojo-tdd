@@ -11,12 +11,12 @@ const divide = (a, b) => {
   return a / b
 }
 
-const getOperator = char => (a, b) => {
-  if (!supportedOperators.includes(char)) {
+const getOperatorFunc = operator => (a, b) => {
+  if (!supportedOperators.includes(operator)) {
     throw new Error('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
   }
 
-  switch (char) {
+  switch (operator) {
     case '+':
       return sum(a, b)
     case '-':
@@ -32,16 +32,14 @@ const extractOperator = str => {
   const matchedOp = str.match(/\D/)
   const operator = matchedOp && matchedOp[0]
 
-    return operator
-
-
+  return operator
 }
 
 const exec = expression => {
   const operator = extractOperator(expression)
   const numbers = expression.split(operator)
     .map(number => parseInt(number, 10))
-  const operatorFunc = getOperator(operator)
+  const operatorFunc = getOperatorFunc(operator)
   return operatorFunc(...numbers)
 }
 
@@ -51,6 +49,6 @@ module.exports = {
   divide,
   subtract,
   multiply,
-  getOperator,
+  getOperatorFunc,
   extractOperator,
 }

@@ -4,7 +4,7 @@ const {
   multiply,
   divide,
   exec,
-  getOperator,
+  getOperatorFunc,
   extractOperator,
 } = require('./calculator')
 
@@ -63,21 +63,21 @@ describe('calculator', () => {
     })
   })
 
-  describe('getOperator', ()=> {
+  describe('getOperatorFunc', ()=> {
     it('should return a sum when input is "+"', () => {
-      expect(getOperator('+')(2, 2)).toBe(4)
+      expect(getOperatorFunc('+')(2, 2)).toBe(4)
     })
     it('should return a subtract when input is "-"', () => {
-      expect(getOperator('-')(2, 2)).toBe(0)
+      expect(getOperatorFunc('-')(2, 2)).toBe(0)
     })
     it('should return a multiply when input is "*"', () => {
-      expect(getOperator('*')(2, 2)).toBe(4)
+      expect(getOperatorFunc('*')(2, 2)).toBe(4)
     })
     it('should return a divide when input is "/"', () => {
-      expect(getOperator('/')(4, 2)).toBe(2)
+      expect(getOperatorFunc('/')(4, 2)).toBe(2)
     })
     it('should throw an error when operator is not valid', () => {
-      expect(() => getOperator('@')(4, 2)).toThrowError('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
+      expect(() => getOperatorFunc('@')(4, 2)).toThrowError('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
     })
   })
 
