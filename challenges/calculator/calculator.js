@@ -43,7 +43,7 @@ const extractOperator = str => {
 const exec = expression => {
   const operator = extractOperator(expression)
   const numbers = expression.split(operator)
-  console.log({numbers})
+    .map(number => parseInt(number, 10))
   const operatorFunc = getOperator(operator)
   return operatorFunc(...numbers)
 }
