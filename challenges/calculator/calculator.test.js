@@ -1,4 +1,12 @@
-const { sum, subtract, multiply, divide, exec, getOperator } = require('./calculator')
+const {
+  sum,
+  subtract,
+  multiply,
+  divide,
+  exec,
+  getOperator,
+  extractOperator,
+} = require('./calculator')
 
 describe('calculator', () => {
   describe('sum', () => {
