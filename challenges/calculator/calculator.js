@@ -30,8 +30,12 @@ const getOperator = char => (a, b) => {
 }
 
 const extractOperator = str => {
-  const operator = str.match(/\D/)
-  return operator && operator[0]
+  const matchedOp = str.match(/\D/)
+  const operator = matchedOp && matchedOp[0]
+  if (!supportedOperators.includes(operator)) {
+    throw Error('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
+  }
+  return operator
 }
 
 const exec = str => {
