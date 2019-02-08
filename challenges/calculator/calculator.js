@@ -16,16 +16,12 @@ const getOperator = char => (a, b) => {
   switch (char) {
     case '+':
       return sum(a, b)
-      break
     case '-':
       return subtract(a, b)
-      break
     case '*':
       return multiply(a, b)
-      break
     case '/':
       return divide(a, b)
-      break
   }
 }
 
@@ -47,6 +43,7 @@ const extractOperator = str => {
 const exec = expression => {
   const operator = extractOperator(expression)
   const numbers = expression.split(operator)
+  console.log({numbers})
   const operatorFunc = getOperator(operator)
   return operatorFunc(...numbers)
 }
