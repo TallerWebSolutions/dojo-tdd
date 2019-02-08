@@ -37,10 +37,11 @@ const extractOperator = str => {
 
 const exec = expression => {
   const operator = extractOperator(expression)
+  const operatorFunc = getOperatorFunc(operator)
   const numbers = expression.split(operator)
     .map(number => parseInt(number, 10))
-  console.log({ numbers })
-  const operatorFunc = getOperatorFunc(operator)
+
+
   return operatorFunc(...numbers)
 }
 
