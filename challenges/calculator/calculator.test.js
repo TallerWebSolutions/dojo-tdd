@@ -76,7 +76,7 @@ describe('calculator', () => {
     it('should return a divide when input is "/"', () => {
       expect(getOperator('/')(4, 2)).toBe(2)
     })
-    it.only('should throw an error when operator is not valid', () => {
+    it('should throw an error when operator is not valid', () => {
       expect(() => getOperator('@')(4, 2)).toThrowError('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
     })
   })
@@ -100,11 +100,6 @@ describe('calculator', () => {
     
     it('should return nothing when no operator found', () => {
       expect(extractOperator('11')).toBe(null)
-    })
-
-    it('should throw an error when the operator is not supported', () => {
-      expect(() => extractOperator('1d1'))
-        .toThrowError('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
     })
   })
 

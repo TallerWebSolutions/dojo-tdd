@@ -32,13 +32,8 @@ const extractOperator = str => {
   const matchedOp = str.match(/\D/)
   const operator = matchedOp && matchedOp[0]
 
-  if (supportedOperators.includes(operator)) {
     return operator
-  }
 
-  if (operator === null) {
-    return null
-  }
 
 }
 
