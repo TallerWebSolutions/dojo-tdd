@@ -85,6 +85,10 @@ describe('calculator', () => {
     it('should return plus operator for sum', () => {
       expect(extractOperator('1+1')).toBe('+')
     })
+    
+    it('should return minus operator for subtraction', () => {
+      expect(extractOperator('1-1')).toBe('-')
+    })
   })
 
   describe('exec', ()=> {
