@@ -44,7 +44,8 @@ const extractOperator = str => {
   throw new Error('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
 }
 
-const exec = str => {
+const exec = expression => {
+  const operator = extractOperator(expression)
   return str === '1+1' ? 2 : 3
 }
 
