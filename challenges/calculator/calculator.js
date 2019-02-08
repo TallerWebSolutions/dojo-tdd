@@ -12,7 +12,10 @@ const divide = (a, b) => {
 }
 
 const getOperator = char => (a, b) => {
-  // return char === '+' ? sum(a, b) : subtract(a, b)
+  if (!supportedOperators.includes(char)) {
+    throw new Error('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
+  }
+
   switch (char) {
     case '+':
       return sum(a, b)
@@ -37,7 +40,6 @@ const extractOperator = str => {
     return null
   }
 
-  throw new Error('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
 }
 
 const exec = expression => {
