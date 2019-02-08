@@ -99,7 +99,7 @@ describe('calculator', () => {
     })
     
     it('should return nothing when no operator found', () => {
-      expect(extractOperator('11')).toBe('')
+      expect(extractOperator('11')).toBe(null)
     })
   })
 
