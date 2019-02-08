@@ -97,6 +97,10 @@ describe('calculator', () => {
     it('should return times operator for multiplication', () => {
       expect(extractOperator('1*1')).toBe('*')
     })
+    
+    it('should return nothing when no operator found', () => {
+      expect(extractOperator('11')).toBe('')
+    })
   })
 
   describe('exec', ()=> {
