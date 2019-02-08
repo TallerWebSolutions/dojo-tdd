@@ -22,9 +22,8 @@ const getOperatorFunc = operator => (a, b) => {
     '*': multiply(a, b),
     '/': divide(a, b),
   }
-
-  return funcOperators.operator
-   
+  console.log(funcOperators)
+  return funcOperators[operator]
     
   // switch (operator) {
   //   case '+':
