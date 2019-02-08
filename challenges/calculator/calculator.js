@@ -15,17 +15,28 @@ const getOperatorFunc = operator => (a, b) => {
   if (!supportedOperators.includes(operator)) {
     throw new Error('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
   }
-
-  switch (operator) {
-    case '+':
-      return sum(a, b)
-    case '-':
-      return subtract(a, b)
-    case '*':
-      return multiply(a, b)
-    case '/':
-      return divide(a, b)
+  
+  const funcOperators = {
+    '+': sum(a, b),
+    '-': subtract(a, b),
+    '*': multiply(a, b),
+    '/': divide(a, b),
   }
+
+  return funcOperators.reduce
+
+   
+    
+  // switch (operator) {
+  //   case '+':
+  //     return sum(a, b)
+  //   case '-':
+  //     return subtract(a, b)
+  //   case '*':
+  //     return multiply(a, b)
+  //   case '/':
+  //     return divide(a, b)
+  // }
 }
 
 const extractOperator = str => {
@@ -40,7 +51,6 @@ const exec = expression => {
   const operatorFunc = getOperatorFunc(operator)
   const numbers = expression.split(operator)
     .map(number => parseInt(number, 10))
-
 
   return operatorFunc(...numbers)
 }
