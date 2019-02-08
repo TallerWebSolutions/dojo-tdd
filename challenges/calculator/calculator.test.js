@@ -81,7 +81,7 @@ describe('calculator', () => {
     // })
   })
 
-  describe.only('extract operator', () => {
+  describe('extract operator', () => {
     it('should return plus operator for sum', () => {
       expect(extractOperator('1+1')).toBe('+')
     })
