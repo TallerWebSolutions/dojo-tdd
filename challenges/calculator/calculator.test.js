@@ -114,8 +114,8 @@ describe('calculator', () => {
       it('should return 30 when 20 + 10', () => {
         expect(exec('20+10')).toBe(30)
       })
-      it('should return 3 when 1 + 1 + 1', () => {
-        expect(exec('1+1+1')).toBe(2)
+      it.only('should return 3 when 1 + 1 + 1', () => {
+        expect(exec('1+1+1')).toBe(3)
       })
     })
 
