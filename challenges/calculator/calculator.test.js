@@ -89,6 +89,14 @@ describe('calculator', () => {
     it('should return minus operator for subtraction', () => {
       expect(extractOperator('1-1')).toBe('-')
     })
+    
+    it('should return division operator for division', () => {
+      expect(extractOperator('1/1')).toBe('/')
+    })
+    
+    it('should return times operator for multiplication', () => {
+      expect(extractOperator('1*1')).toBe('*')
+    })
   })
 
   describe('exec', ()=> {
