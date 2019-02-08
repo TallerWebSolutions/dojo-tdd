@@ -17,13 +17,13 @@ const getOperatorFunc = operator => (a, b) => {
   }
   
   const funcOperators = {
-    '+': sum(a, b),
-    '-': subtract(a, b),
-    '*': multiply(a, b),
-    '/': divide(a, b),
+    '+': sum,
+    '-': subtract,
+    '*': multiply,
+    '/': divide,
   }
   
-  return funcOperators[operator]
+  return funcOperators[operator](a, b)
     
   // switch (operator) {
   //   case '+':
