@@ -131,10 +131,22 @@ describe('calculator', () => {
       it('should return 1 when 1 * 1', () => {
         expect(exec('1*1')).toBe(1)
       })
-      it('should return 1 when 1 / 1', () => {
-        expect(exec('1/1')).toBe(1)
+
+      it('should return 4 when 2 * 2', () => {
+        expect(exec('2*2')).toBe(4)
       })
     })
+
+    describe('multiply', () => {
+      it('should return 1 when 1 * 1', () => {
+        expect(exec('1*1')).toBe(1)
+      })
+
+      it('should return 3 when 6 / 2', () => {
+        expect(exec('6/2')).toBe(3)
+      })
+    })
+
   })
 
 })
