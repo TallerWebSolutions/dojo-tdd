@@ -23,8 +23,7 @@ const getOperatorFunc = operator => (a, b) => {
     '/': divide(a, b),
   }
 
-  return funcOperators.reduce
-
+  return funcOperators.operator
    
     
   // switch (operator) {
