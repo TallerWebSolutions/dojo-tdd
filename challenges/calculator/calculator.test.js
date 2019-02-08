@@ -77,7 +77,7 @@ describe('calculator', () => {
       expect(getOperator('/')(4, 2)).toBe(2)
     })
     it.only('should throw an error when operator is not valid', () => {
-      expect(() => getOperator('@')).toThrowError('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
+      expect(() => getOperator('@')(4, 2)).toThrowError('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
     })
   })
 
