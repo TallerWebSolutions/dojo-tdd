@@ -27,7 +27,7 @@ const getOperator = char => (a, b) => {
   }
 }
 
-const extractOperator = str => str.match(/\D/)[0]
+const extractOperator = str => str.match(/\D/)[0] || ''
 
 const exec = str => {
   return str === '1+1' ? 2 : 3
