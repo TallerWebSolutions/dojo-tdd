@@ -33,7 +33,7 @@ const extractOperator = str => {
   const matchedOp = str.match(/\D/)
   const operator = matchedOp && matchedOp[0]
   if (!supportedOperators.includes(operator)) {
-    throw Error('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
+    throw new Error('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
   }
   return operator
 }
