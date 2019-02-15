@@ -6,6 +6,8 @@ const {
   exec,
   getOperatorFunc,
   extractOperator,
+  exponential,
+  extractTokens
 } = require('./calculator')
 
 describe('calculator', () => {
@@ -58,13 +60,27 @@ describe('calculator', () => {
     it('should throw an error on 10/0', () => {
       expect(() => divide(10, 0)).toThrowError("Impossível dividir por zero")
     })
-    it('should return -5 an error on 10/-2', () => {
+    it('should return -5 on 10/-2', () => {
       expect(divide(10, -2)).toBe(-5)
     })
   })
 
-  describe.only('getOperatorFunc', ()=> {
-    it.only('should return a sum when input is "+"', () => {
+  describe('exponential', () => {
+    it('should return the result of 2 with power 2', () => {
+      expect(exponential(2, 2)).toBe(4)
+    })
+
+    it('should return the result of 2 with power 3', () => {
+      expect(exponential(2, 3)).toBe(8)
+    })
+
+    it('should return the result of -2 in the power 3', () => {
+      expect(exponential(-2, 3)).toBe(-8)
+    })
+  })
+
+  describe('getOperatorFunc', ()=> {
+    it('should return a sum when input is "+"', () => {
       expect(getOperatorFunc('+')(2, 2)).toBe(4)
     })
     it('should return a subtract when input is "-"', () => {
@@ -76,12 +92,21 @@ describe('calculator', () => {
     it('should return a divide when input is "/"', () => {
       expect(getOperatorFunc('/')(4, 2)).toBe(2)
     })
+    it('should return an exponential when input is "^"', () => {
+      expect(getOperatorFunc('^')(2, 3)).toBe(8)
+    })
     it('should throw an error when operator is not valid', () => {
       expect(() => getOperatorFunc('@')(4, 2)).toThrowError('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
     })
   })
 
-  describe('extract operator', () => {
+  describe('extractTokens', () => {
+    it('should return operators', () => {
+      expect(extractTokens('-1*-1')).toEqual(['-1', '*', '-1'])
+    })
+  })
+
+  describe.only('extract operator', () => {
     it('should return plus operator for sum', () => {
       expect(extractOperator('1+1')).toBe('+')
     })
@@ -97,7 +122,11 @@ describe('calculator', () => {
     it('should return times operator for multiplication', () => {
       expect(extractOperator('1*1')).toBe('*')
     })
-    
+
+    it('should return exponent operator for power', () => {
+      expect(extractOperator('2^2')).toBe('^')
+    })
+
     it('should return nothing when no operator found', () => {
       expect(extractOperator('11')).toBe(null)
     })
@@ -133,7 +162,10 @@ describe('calculator', () => {
       it('should return 4 when 2 * 2', () => {
         expect(exec('2*2')).toBe(4)
       })
-    })
+      it('should return 4 when 2 * 2', () => {
+        expect(exec('-2*2')).toBe(-4)
+      })
+    }) 
 
     describe('multiply', () => {
       it('should return 1 when 1 * 1', () => {
@@ -145,5 +177,18 @@ describe('calculator', () => {
       })
     })
 
+    describe('exponential', () => {
+      it('should return 4 when 2 ^ 2', () => {
+        expect(exec('2^2')).toBe(4)
+      })
+      it('should return 81 when 9 ^ 2', () => {
+        expect(exec('9^2')).toBe(81)
+      })
+      it('should return 1 when 1 ^ -1', () => {
+        expect(exec('1^-1')).toBe(1)
+      })
+    })
+
   })
+
 })
