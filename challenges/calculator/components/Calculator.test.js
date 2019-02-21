@@ -11,7 +11,7 @@ describe('Calculator', () => {
     expect(wrapper.text()).toBe('calculadora')
   })
 
-  it('should have an input with the result', () => {
+  it('should have an input', () => {
     const wrapper = render(<UserInput />)
     expect(wrapper.find(input)).toHaveLength(1)
   })
