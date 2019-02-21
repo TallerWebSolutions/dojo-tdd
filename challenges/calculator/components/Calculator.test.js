@@ -16,3 +16,10 @@ describe('Calculator', () => {
     expect(wrapper.find('input')).toHaveLength(1)
   })
 })
+
+describe('Exec', () => {
+  it('Should have a submit button', () => {
+    const wrapper = shallow(<Submit />)
+    expect(wrapper.find('button')).toHaveLength(1)
+  })
+})
