@@ -6,7 +6,7 @@ import UserInput from './UserInput'
 import Result from './Result'
 import Button from './Button'
 
-describe.only('Calculator', () => {
+describe('Calculator', () => {
   it('should render main component', () => {
     const wrapper = shallow(<Calculator />)
 
@@ -35,8 +35,9 @@ describe('UserInput', () => {
   })
   
   it('should have an input with value', () => {
-    const wrapper = shallow(<UserInput />)
-    expect(wrapper.find('input')).toHaveLength(1)
+    const inputState = '2+2'
+    const wrapper = shallow(<UserInput value='2+2' />)
+    expect(wrapper.find('input').props().value).toEqual(inputState)
   })
 })
 
