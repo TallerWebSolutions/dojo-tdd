@@ -19,6 +19,6 @@ describe.only('Calculator', () => {
 
   it('should have the output', () => {
     const wrapper = shallow(<UserInput />)
-    expect(wrapper.find(<Result />))
+    expect(wrapper.find(<Result />)).toHaveLength(1)
   })
 })
