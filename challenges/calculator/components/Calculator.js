@@ -16,7 +16,7 @@ class Calculator extends React.Component {
   render() {
     return (
       <div>
-        <UserInput />
+        <UserInput value={ this.state.input } />
         <Result />
         <Button />
       </div>
