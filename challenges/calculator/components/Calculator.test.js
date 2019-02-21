@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'enzyme'
+import { render, shallow } from 'enzyme'
 
 import Calculator from './Calculator'
 import UserInput from './UserInput'
@@ -12,7 +12,7 @@ describe('Calculator', () => {
   })
 
   it('should have an input', () => {
-    const wrapper = render(<UserInput />)
+    const wrapper = shallow(<UserInput />)
     expect(wrapper.find('input')).toHaveLength(1)
   })
 })
