@@ -8,9 +8,11 @@ import Button from './Button'
 
 describe.only('Calculator', () => {
   it('should render main component', () => {
-    const wrapper = render(<Calculator />)
+    const wrapper = shallow(<Calculator />)
 
-    expect(wrapper.text()).toBe('calculadora')
+    expect(wrapper.find(UserInput)).toHaveLength(1)
+    expect(wrapper.find(Result)).toHaveLength(1)
+    expect(wrapper.find(Button)).toHaveLength(1)
   })
 })
 
