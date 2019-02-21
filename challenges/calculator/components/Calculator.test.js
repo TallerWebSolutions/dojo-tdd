@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from 'enzyme'
 
 import Calculator from './Calculator'
+import UserInput from './UserInput'
 
 describe('Calculator', () => {
   it('should render main component', () => {
