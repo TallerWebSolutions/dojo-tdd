@@ -14,6 +14,11 @@ describe.only('Calculator', () => {
     expect(wrapper.find(Result)).toHaveLength(1)
     expect(wrapper.find(Button)).toHaveLength(1)
   })
+
+  it('should have a input state', () => {
+    const wrapper = shallow(<Calculator />)
+    expect(wrapper.state('input')).toEqual('')    
+  })
 })
 
 describe.only('UserInput', () => {
