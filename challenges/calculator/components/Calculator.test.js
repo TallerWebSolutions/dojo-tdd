@@ -4,7 +4,7 @@ import { render } from 'enzyme'
 import Calculator from './Calculator'
 
 describe('Calculator', () => {
-  it('should render component', () => {
+  it('should render main component', () => {
     const wrapper = render(<Calculator />)
 
     expect(wrapper.text()).toBe('calculadora')
