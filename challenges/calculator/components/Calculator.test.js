@@ -18,6 +18,9 @@ describe.only('Calculator', () => {
   it('should have a input state', () => {
     const wrapper = shallow(<Calculator />)
     expect(wrapper.state('input')).toEqual('')
+    
+    wrapper.setState({ input: '2+2' })
+    expect(wrapper.state('input')).toEqual('2+2')
   })
 })
 
