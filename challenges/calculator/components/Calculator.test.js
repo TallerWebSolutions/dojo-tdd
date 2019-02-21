@@ -35,5 +35,10 @@ describe.only('Button', () => {
     const wrapper = shallow(<Button />)
     expect(wrapper.find('button')).toHaveLength(1)
   })
-})
 
+  it('Should execute a function when clicked', () => {
+    const fn = jest.fn()
+    const wrapper = shallow(<Button onClick={fn} />)
+    expect(fn).toHaveBeenCalled()
+  })
+})
