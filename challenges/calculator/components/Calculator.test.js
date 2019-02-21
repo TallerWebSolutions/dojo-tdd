@@ -39,6 +39,14 @@ describe('UserInput', () => {
     const wrapper = shallow(<UserInput value='2+2' />)
     expect(wrapper.find('input').props().value).toEqual(inputState)
   })
+
+  it('should have an input with value which can change', () => {
+    const inputState = '2+2'
+    const onChange = jest.fn()
+    const wrapper = shallow(<UserInput value='2+2' onChange={ onChange } />)
+
+    expect(false).toEqual(true)
+  })
 })
 
 describe('Result', () => {
