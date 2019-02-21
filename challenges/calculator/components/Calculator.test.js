@@ -24,7 +24,7 @@ describe.only('Calculator', () => {
     const wrapper = mount(<Calculator />)
     wrapper.setState({ input: '2+2' })
     expect(wrapper.find('input')).toHaveLength(1)
-    expect(wrapper.find('input').props()).toEqual('2+2')
+    expect(wrapper.find('input').props().value).toEqual('2+2')
   })
 })
 

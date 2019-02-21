@@ -1,5 +1,7 @@
 import React from 'react'
 
-const UserInput = () => <input />
+const UserInput = ({ value }) => (
+  <input value={ value } />
+)
 
 export default UserInput
