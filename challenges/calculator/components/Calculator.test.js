@@ -26,17 +26,15 @@ describe.only('Calculator', () => {
     expect(wrapper.find('input')).toHaveLength(1)
     expect(wrapper.find('input').props().value).toEqual('2+2')
   })
-
-  it('should have state value on <UserInput/>', () => {
-    const wrapper = mount(<Calculator />)
-    wrapper.setState({ input: '2+2' })
-    expect(wrapper.find('input')).toHaveLength(1)
-    expect(wrapper.find('input').props().value).toEqual('2+2')
-  })
 })
 
 describe('UserInput', () => {
   it('should have an input', () => {
+    const wrapper = shallow(<UserInput />)
+    expect(wrapper.find('input')).toHaveLength(1)
+  })
+  
+  it('should have an input with value', () => {
     const wrapper = shallow(<UserInput />)
     expect(wrapper.find('input')).toHaveLength(1)
   })
