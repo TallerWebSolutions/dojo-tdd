@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, shallow } from 'enzyme'
+import { render, shallow, mount } from 'enzyme'
 
 import Calculator from './Calculator'
 import UserInput from './UserInput'
@@ -21,10 +21,10 @@ describe.only('Calculator', () => {
   })
 
   it('should have state value on <UserInput/>', () => {
-    const wrapper = render(<Calculator />)
-    // wrapper.setState({ input: '2+2' })
+    const wrapper = mount(<Calculator />)
+    wrapper.setState({ input: '2+2' })
     expect(wrapper.find('input')).toHaveLength(1)
-    // expect(wrapper.find('input').props().value).toEqual('2+2')
+    expect(wrapper.find('input').props()).toEqual('2+2')
   })
 })
 
