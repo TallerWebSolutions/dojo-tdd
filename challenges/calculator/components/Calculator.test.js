@@ -1,9 +1,10 @@
 import React from 'react'
-import { render, shallow, mount } from 'enzyme'
+import { render, shallow } from 'enzyme'
 
 import Calculator from './Calculator'
 import UserInput from './UserInput'
 import Result from './Result'
+import Button from './Button'
 
 describe.only('Calculator', () => {
   it('should render main component', () => {
@@ -22,15 +23,15 @@ describe.only('UserInput', () => {
 
 describe.only('Result', () => {
   it('should have the output', () => {
-    const wrapper = mount(<Result />)
+    const wrapper = shallow(<Result />)
     expect(wrapper.text()).toBe('resultado')
   })
 })
 
 describe.only('Button', () => {
-  it('should have the output', () => {
-    const wrapper = mount(<Button />)
-    expect(wrapper.text()).toBe('botão')
+  it('should have a button', () => {
+    const wrapper = shallow(<Button />)
+    expect(wrapper.find('button')).toHaveLength(1)
   })
 })
 
