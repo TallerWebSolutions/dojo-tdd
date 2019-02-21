@@ -38,7 +38,7 @@ describe.only('Button', () => {
 
   it('Should execute a function when clicked', () => {
     const fn = jest.fn()
-    const wrapper = shallow(<Button onClick={fn} />)
+    const wrapper = shallow(<Button onClick={ fn } />)
 
     wrapper.simulate('click')
 

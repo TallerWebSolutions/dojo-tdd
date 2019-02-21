@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button = props => (
   <div>
-    <button onClick={props.onClick} >calcular</button>
+    <button onClick={ props.onClick }>calcular</button>
   </div>
 )
 
