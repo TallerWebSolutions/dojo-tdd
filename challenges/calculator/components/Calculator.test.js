@@ -3,6 +3,7 @@ import { render, shallow } from 'enzyme'
 
 import Calculator from './Calculator'
 import UserInput from './UserInput'
+import Result from './Result'
 
 describe.only('Calculator', () => {
   it('should render main component', () => {
@@ -15,11 +16,9 @@ describe.only('Calculator', () => {
     const wrapper = shallow(<UserInput />)
     expect(wrapper.find('input')).toHaveLength(1)
   })
-})
 
-describe('Exec', () => {
-  it('Should have a submit button', () => {
-    const wrapper = shallow(<Submit />)
-    expect(wrapper.find('button')).toHaveLength(1)
+  it('should have the output', () => {
+    const wrapper = shallow(<UserInput />)
+    expect(wrapper.find(<Result />))
   })
 })
