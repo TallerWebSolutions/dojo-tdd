@@ -6,8 +6,11 @@ import Button from './Button'
 
 class Calculator extends React.Component {
 
-  state: {
-    input: ''
+  constructor(props) {
+    super(props)
+    this.state = {
+      input: ''
+    }
   }
 
   render() {
