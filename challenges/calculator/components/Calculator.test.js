@@ -13,7 +13,7 @@ describe.only('Calculator', () => {
   })
 
   it('should have an input', () => {
-    const wrapper = shallow(<UserInput />)
+    const wrapper = shallow(<Calculator />)
     expect(wrapper.find('input')).toHaveLength(1)
   })
 
