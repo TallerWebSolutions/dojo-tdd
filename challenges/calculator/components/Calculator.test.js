@@ -11,14 +11,26 @@ describe.only('Calculator', () => {
 
     expect(wrapper.text()).toBe('calculadora')
   })
+})
 
+describe.only('UserInput', () => {
   it('should have an input', () => {
-    const wrapper = shallow(<Calculator />)
+    const wrapper = shallow(<UserInput />)
     expect(wrapper.find('input')).toHaveLength(1)
   })
+})
 
+describe.only('Result', () => {
   it('should have the output', () => {
-    const wrapper = mount(<UserInput />)
-    expect(wrapper.find(Result)).toHaveLength(1)
+    const wrapper = mount(<Result />)
+    expect(wrapper.text()).toBe('resultado')
   })
 })
+
+describe.only('Button', () => {
+  it('should have the output', () => {
+    const wrapper = mount(<Button />)
+    expect(wrapper.text()).toBe('botão')
+  })
+})
+
