@@ -19,6 +19,6 @@ describe.only('Calculator', () => {
 
   it('should have the output', () => {
     const wrapper = mount(<UserInput />)
-    expect(wrapper.find(<Result />)).toHaveLength(1)
+    expect(wrapper.find(Result)).toHaveLength(1)
   })
 })
