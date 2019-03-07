@@ -1,5 +1,5 @@
 import React from 'react'
 
-const Result = props => <div>resultado</div>
+const Result = ({ value }) => <div>{value}</div>
 
 export default Result

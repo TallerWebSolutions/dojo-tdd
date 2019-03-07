@@ -52,7 +52,7 @@ describe('UserInput', () => {
 })
 
 describe('Result', () => {
-  it.only('should have the output', () => {
+  it('should have the output', () => {
     const wrapper = shallow(<Result value="4" />)
     expect(wrapper.text()).toBe('4')
   })
