@@ -71,6 +71,7 @@ describe('Calculator', () => {
   it.only('should reset current state of calculator', () => {
     const wrapper = mount(<Calculator />)
     wrapper.setState({ input: '2+2', result: '4' })
+    wrapper.find(ResetButton).simulate('click')
 
     expect(wrapper.state()).toEqual({ input: '', result: '' })
   })
