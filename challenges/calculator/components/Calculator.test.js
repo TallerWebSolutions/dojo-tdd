@@ -97,7 +97,7 @@ describe('Result', () => {
   })
 })
 
-describe.only('CalcButton', () => {
+describe('CalcButton', () => {
   it('should have a button', () => {
     const wrapper = shallow(<CalcButton />)
     expect(wrapper.find('button')).toHaveLength(1)
@@ -106,6 +106,22 @@ describe.only('CalcButton', () => {
   it('Should execute a function when clicked', () => {
     const fn = jest.fn()
     const wrapper = shallow(<CalcButton onClick={fn} />)
+
+    wrapper.simulate('click')
+
+    expect(fn).toHaveBeenCalled()
+  })
+})
+
+describe.only('ResetButton', () => {
+  it('should have button', () => {
+    const wrapper = shallow(<ResultButton />)
+    expect(wrapper.find('button')).toHaveLength(1)
+  })
+
+  it('Should execute a function when clicked', () => {
+    const fn = jest.fn()
+    const wrapper = shallow(<ResetButton />)
 
     wrapper.simulate('click')
 
