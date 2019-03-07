@@ -30,7 +30,7 @@ class Calculator extends React.Component {
         <UserInput value={this.state.input} onChange={e => this.onChange(e)} />
         <Result value={this.state.result} />
         <CalcButton onClick={() => this.onCalculate()}>calcular</CalcButton>
-        <ResetButton />
+        <ResetButton onClick={() => this.onReset()} />
       </div>
     )
   }
