@@ -111,9 +111,4 @@ describe.only('Button', () => {
 
     expect(fn).toHaveBeenCalled()
   })
-
-  it.only('should have "calcular" text', () => {
-    const wrapper = shallow(<Button>calcular</Button>)
-    expect(wrapper.find('button').text()).toBe('calcular')
-  })
 })
