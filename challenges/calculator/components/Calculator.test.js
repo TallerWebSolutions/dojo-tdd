@@ -126,11 +126,11 @@ describe.only('ResetButton', () => {
   })
 
   it('Should execute a function when clicked', () => {
-    const fn = jest.fn()
-    const wrapper = shallow(<ResetButton />)
+    const onClick = jest.fn()
+    const wrapper = shallow(<ResetButton onClick={onClick} />)
 
     wrapper.simulate('click')
 
-    expect(fn).toHaveBeenCalled()
+    expect(onClick).toHaveBeenCalled()
   })
 })
