@@ -37,7 +37,8 @@ describe('Calculator', () => {
   it('should set result state as 8 when input 4+4', () => {
     const wrapper = mount(<Calculator />)
     const input = wrapper.find('input')
-    input.simulate('change', '4+4')
+    const event = { target: { value: '4+4' } }
+    input.simulate('change', event)
     expect(wrapper.state('result')).toEqual('8')
   })
 })
