@@ -121,7 +121,7 @@ describe('CalcButton', () => {
 
 describe.only('ResetButton', () => {
   it('should have button', () => {
-    const wrapper = shallow(<ResultButton />)
+    const wrapper = shallow(<ResetButton />)
     expect(wrapper.find('button')).toHaveLength(1)
   })
 
