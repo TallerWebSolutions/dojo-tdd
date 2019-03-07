@@ -42,7 +42,7 @@ describe('Calculator', () => {
     const input = wrapper.find('input')
     const event = { target: { value: '2+2' } }
     input.simulate('change', event)
-    const button = wrapper.find('button')
+    const button = wrapper.find(CalcButton)
     button.simulate('click')
     expect(wrapper.state('result')).toEqual(4)
   })
@@ -52,7 +52,7 @@ describe('Calculator', () => {
     const input = wrapper.find('input')
     const event = { target: { value: '4+4' } }
     input.simulate('change', event)
-    const button = wrapper.find('button')
+    const button = wrapper.find(CalcButton)
     button.simulate('click')
     expect(wrapper.state('result')).toEqual(8)
   })
@@ -62,7 +62,7 @@ describe('Calculator', () => {
     const input = wrapper.find('input')
     const event = { target: { value: '4-2' } }
     input.simulate('change', event)
-    const button = wrapper.find('button')
+    const button = wrapper.find(CalcButton)
     button.simulate('click')
     const result = wrapper.find(Result)
     expect(result.text()).toEqual('2')
