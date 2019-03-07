@@ -5,6 +5,7 @@ import Calculator from './Calculator'
 import UserInput from './UserInput'
 import Result from './Result'
 import CalcButton from './CalcButton'
+import ResetButton from './ResetButton'
 
 describe('Calculator', () => {
   it('should render main component', () => {
@@ -66,7 +67,7 @@ describe('Calculator', () => {
     expect(result.text()).toEqual('2')
   })
 
-  it.only('should have a reset button', () => {
+  it('should have a reset button', () => {
     const wrapper = mount(<Calculator />)
     expect(wrapper.find(ResetButton)).toHaveLength(1)
   })
@@ -118,7 +119,7 @@ describe('CalcButton', () => {
   })
 })
 
-describe('ResetButton', () => {
+describe.only('ResetButton', () => {
   it('should have button', () => {
     const wrapper = shallow(<ResultButton />)
     expect(wrapper.find('button')).toHaveLength(1)
