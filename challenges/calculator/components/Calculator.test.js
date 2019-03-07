@@ -44,8 +44,9 @@ describe('UserInput', () => {
     const inputState = '2+2'
     const onChange = jest.fn()
     const wrapper = shallow(<UserInput value='2+2' onChange={ onChange } />)
-    wrapper.simulate('change')
+    wrapper.simulate('change', '2+3')
     expect(onChange).toHaveBeenCalled()
+    expect(onChange).toHaveBeenCalledWith('2+4')
   })
 })
 
