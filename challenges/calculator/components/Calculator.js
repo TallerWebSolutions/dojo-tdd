@@ -19,7 +19,7 @@ class Calculator extends React.Component {
   }
 
   onCalculate() {
-    this.setState({ result: '4' })
+    this.setState({ result: calculate(this.state.input) })
   }
 
   render() {
