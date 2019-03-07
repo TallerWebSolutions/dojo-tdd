@@ -7,13 +7,15 @@ import CalcButton from './CalcButton'
 import { exec as calculate } from '../calculator'
 import ResetButton from './ResetButton'
 
+const initialState = {
+  input: '',
+  result: '',
+}
+
 class Calculator extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      input: '',
-      result: '',
-    }
+    this.state = initialState
   }
 
   onChange(e) {
@@ -22,6 +24,10 @@ class Calculator extends React.Component {
 
   onCalculate() {
     this.setState({ result: calculate(this.state.input) })
+  }
+
+  onReset() {
+    this.setState(initialState)
   }
 
   render() {
