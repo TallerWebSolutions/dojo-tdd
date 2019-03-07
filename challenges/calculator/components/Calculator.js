@@ -20,7 +20,10 @@ class Calculator extends React.Component {
   render() {
     return (
       <div>
-        <UserInput value={this.state.input} onChange={onChange} />
+        <UserInput
+          value={this.state.input}
+          onChange={this.onChange.bind(this)}
+        />
         <Result />
         <Button />
       </div>
