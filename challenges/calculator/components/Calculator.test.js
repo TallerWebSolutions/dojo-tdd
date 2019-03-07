@@ -63,7 +63,7 @@ describe('Calculator', () => {
     const button = wrapper.find('button')
     button.simulate('click')
     const result = wrapper.find(Result)
-    expect(wrapper.find(result).props().value).toEqual(2)
+    expect(result.text()).toEqual(2)
   })
 })
 
