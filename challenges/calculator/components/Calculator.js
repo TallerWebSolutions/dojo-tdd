@@ -3,6 +3,7 @@ import React from 'react'
 import UserInput from './UserInput'
 import Result from './Result'
 import Button from './Button'
+import Calculator from '../calculator'
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Calculator extends React.Component {
   }
 
   onChange() {
-    this.setState({ result: '4' })
+    this.setState({ result: exec(this.state.input) })
   }
 
   render() {
