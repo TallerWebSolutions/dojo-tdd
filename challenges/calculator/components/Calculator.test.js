@@ -4,7 +4,7 @@ import { render, shallow, mount } from 'enzyme'
 import Calculator from './Calculator'
 import UserInput from './UserInput'
 import Result from './Result'
-import Button from './Button'
+import CalcButton from './CalcButton'
 
 describe('Calculator', () => {
   it('should render main component', () => {
@@ -12,7 +12,7 @@ describe('Calculator', () => {
 
     expect(wrapper.find(UserInput)).toHaveLength(1)
     expect(wrapper.find(Result)).toHaveLength(1)
-    expect(wrapper.find(Button)).toHaveLength(1)
+    expect(wrapper.find(CalcButton)).toHaveLength(1)
   })
 
   it('should have a input state', () => {
