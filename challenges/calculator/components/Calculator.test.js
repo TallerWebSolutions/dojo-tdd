@@ -67,6 +67,12 @@ describe('Calculator', () => {
     const result = wrapper.find(Result)
     expect(result.text()).toEqual('2')
   })
+
+  it('should display 2 inside Result component', () => {
+    const wrapper = mount(<Calculator />)
+
+    expect(wrapper.state()).toEqual({ input: '', result: '' })
+  })
 })
 
 describe('UserInput', () => {
