@@ -26,6 +26,13 @@ describe('Calculator', () => {
     expect(wrapper.find('input')).toHaveLength(1)
     expect(wrapper.find('input').props().value).toEqual('2+2')
   })
+
+  it('should call onChange when input changes', () => {
+    const wrapper = shallow(<Calculator />)
+    const input = wrapper.find('input')
+    input.simulate('change', '2+2')
+    wrapper.setState({ input: '4' })
+  })
 })
 
 describe('UserInput', () => {
