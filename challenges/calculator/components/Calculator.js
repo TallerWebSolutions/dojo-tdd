@@ -3,7 +3,7 @@ import React from 'react'
 import UserInput from './UserInput'
 import Result from './Result'
 import CalcButton from './CalcButton'
-import ResetButton from './ResetButton'
+// import ResetButton from './ResetButton'
 import { exec as calculate } from '../calculator'
 
 class Calculator extends React.Component {
