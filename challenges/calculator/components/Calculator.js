@@ -15,6 +15,7 @@ class Calculator extends React.Component {
   }
 
   onChange() {
+    console.log(this.state)
     this.setState({ result: calculate(this.state.input) })
   }
 
