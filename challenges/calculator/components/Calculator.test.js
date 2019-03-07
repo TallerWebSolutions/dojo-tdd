@@ -14,6 +14,7 @@ describe('Calculator', () => {
     expect(wrapper.find(UserInput)).toHaveLength(1)
     expect(wrapper.find(Result)).toHaveLength(1)
     expect(wrapper.find(CalcButton)).toHaveLength(1)
+    expect(wrapper.find(ResetButton)).toHaveLength(1)
   })
 
   it('should have a input state', () => {
@@ -66,11 +67,6 @@ describe('Calculator', () => {
     const result = wrapper.find(Result)
     expect(result.text()).toEqual('2')
   })
-
-  it('should have a reset button', () => {
-    const wrapper = mount(<Calculator />)
-    expect(wrapper.find(ResetButton)).toHaveLength(1)
-  })
 })
 
 describe('UserInput', () => {
@@ -119,7 +115,7 @@ describe('CalcButton', () => {
   })
 })
 
-describe.only('ResetButton', () => {
+describe('ResetButton', () => {
   it('should have button', () => {
     const wrapper = shallow(<ResetButton />)
     expect(wrapper.find('button')).toHaveLength(1)
