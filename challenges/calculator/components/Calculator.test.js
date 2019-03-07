@@ -27,11 +27,18 @@ describe('Calculator', () => {
     expect(wrapper.find('input').props().value).toEqual('2+2')
   })
 
-  it('should call onChange when input changes', () => {
+  it('should set result state as 4 when input 2+2', () => {
     const wrapper = mount(<Calculator />)
     const input = wrapper.find('input')
     input.simulate('change', '2+2')
     expect(wrapper.state('result')).toEqual('4')
+  })
+
+  it('should set result state as 8 when input 4+4', () => {
+    const wrapper = mount(<Calculator />)
+    const input = wrapper.find('input')
+    input.simulate('change', '4+4')
+    expect(wrapper.state('result')).toEqual('8')
   })
 })
 
