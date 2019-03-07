@@ -55,7 +55,7 @@ describe('Calculator', () => {
     expect(wrapper.state('result')).toEqual(8)
   })
 
-  it('should display 2 inside Result component', () => {
+  it.only('should display 2 inside Result component', () => {
     const wrapper = mount(<Calculator />)
     const input = wrapper.find('input')
     const event = { target: { value: '4-2' } }
