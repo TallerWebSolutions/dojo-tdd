@@ -27,7 +27,7 @@ describe('Calculator', () => {
     expect(wrapper.find('input').props().value).toEqual('2+2')
   })
 
-  it.only('should set input state when user input chages', () => {
+  it('should set input state when user input chages', () => {
     const wrapper = mount(<Calculator />)
     const input = wrapper.find('input')
     const event = { target: { value: '2+2' } }
@@ -40,6 +40,8 @@ describe('Calculator', () => {
     const input = wrapper.find('input')
     const event = { target: { value: '2+2' } }
     input.simulate('change', event)
+    const button = wrapper.find('button')
+    button.simulate('click')
     expect(wrapper.state('result')).toEqual('4')
   })
 
@@ -48,6 +50,8 @@ describe('Calculator', () => {
     const input = wrapper.find('input')
     const event = { target: { value: '4+4' } }
     input.simulate('change', event)
+    const button = wrapper.find('button')
+    button.simulate('click')
     expect(wrapper.state('result')).toEqual('8')
   })
 })
