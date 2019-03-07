@@ -15,14 +15,14 @@ class Calculator extends React.Component {
   }
 
   onChange(e) {
-    console.log(e)
+    console.log(e.target.value)
     // this.setState({ input: calculate(this.state.input) })
   }
 
   render() {
     return (
       <div>
-        <UserInput value={this.state.input} onChange={e => this.onChange} />
+        <UserInput value={this.state.input} onChange={e => this.onChange(e)} />
         <Result />
         <Button />
       </div>
