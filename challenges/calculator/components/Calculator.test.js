@@ -97,7 +97,7 @@ describe('Result', () => {
   })
 })
 
-describe('Button', () => {
+describe.only('Button', () => {
   it('should have a button', () => {
     const wrapper = shallow(<Button />)
     expect(wrapper.find('button')).toHaveLength(1)
@@ -113,7 +113,7 @@ describe('Button', () => {
   })
 
   it.only('should have "calcular" text', () => {
-    const wrapper = shallow(<Button />)
+    const wrapper = shallow(<Button>calcular</Button>)
     expect(wrapper.find('button').text()).toBe('calcular')
   })
 })
