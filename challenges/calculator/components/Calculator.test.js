@@ -17,7 +17,7 @@ describe('Calculator', () => {
 
   it('should have a input state', () => {
     const wrapper = shallow(<Calculator />)
-    expect(wrapper.state('input')).toEqual('')    
+    expect(wrapper.state('input')).toEqual('')
   })
 
   it('should have state value on <UserInput/>', () => {
@@ -33,19 +33,19 @@ describe('UserInput', () => {
     const wrapper = shallow(<UserInput />)
     expect(wrapper.find('input')).toHaveLength(1)
   })
-  
+
   it('should have an input with value', () => {
     const inputState = '2+2'
-    const wrapper = shallow(<UserInput value='2+2' />)
+    const wrapper = shallow(<UserInput value="2+2" />)
     expect(wrapper.find('input').props().value).toEqual(inputState)
   })
 
-  it.only('should have an input with value which can change', () => {
+  it('should have an input with value which can change', () => {
     const inputState = '2+2'
     const onChange = jest.fn()
-    const wrapper = shallow(<UserInput value='2+2' onChange={ onChange } />)
-    const event = { target: { value: '3+3' }}
-    wrapper.simulate('change', )
+    const wrapper = shallow(<UserInput value="2+2" onChange={onChange} />)
+    const event = { target: { value: '3+3' } }
+    wrapper.simulate('change', event)
     expect(onChange).toHaveBeenCalled()
     expect(onChange).toHaveBeenCalledWith(event)
   })
@@ -66,7 +66,7 @@ describe('Button', () => {
 
   it('Should execute a function when clicked', () => {
     const fn = jest.fn()
-    const wrapper = shallow(<Button onClick={ fn } />)
+    const wrapper = shallow(<Button onClick={fn} />)
 
     wrapper.simulate('click')
 
