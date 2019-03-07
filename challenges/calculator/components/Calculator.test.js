@@ -97,15 +97,15 @@ describe('Result', () => {
   })
 })
 
-describe.only('Button', () => {
+describe.only('CalcButton', () => {
   it('should have a button', () => {
-    const wrapper = shallow(<Button />)
+    const wrapper = shallow(<CalcButton />)
     expect(wrapper.find('button')).toHaveLength(1)
   })
 
   it('Should execute a function when clicked', () => {
     const fn = jest.fn()
-    const wrapper = shallow(<Button onClick={fn} />)
+    const wrapper = shallow(<CalcButton onClick={fn} />)
 
     wrapper.simulate('click')
 

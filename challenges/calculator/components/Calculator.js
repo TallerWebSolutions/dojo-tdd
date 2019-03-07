@@ -2,7 +2,7 @@ import React from 'react'
 
 import UserInput from './UserInput'
 import Result from './Result'
-import Button from './Button'
+import CalcButton from './CalcButton'
 import { exec as calculate } from '../calculator'
 
 class Calculator extends React.Component {
@@ -27,7 +27,7 @@ class Calculator extends React.Component {
       <div>
         <UserInput value={this.state.input} onChange={e => this.onChange(e)} />
         <Result value={this.state.result} />
-        <Button onClick={() => this.onCalculate()}>calcular</Button>
+        <CalcButton onClick={() => this.onCalculate()}>calcular</CalcButton>
       </div>
     )
   }
