@@ -1,5 +1,7 @@
 import React from 'react'
 
-const Button = ({ onClick }) => <button onClick={onClick}>calcular</button>
+const Button = ({ onClick, children }) => (
+  <button onClick={onClick}>{children}</button>
+)
 
 export default Button

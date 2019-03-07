@@ -111,4 +111,9 @@ describe('Button', () => {
 
     expect(fn).toHaveBeenCalled()
   })
+
+  it('should have "calcular" text', () => {
+    const wrapper = shallow(<Button />)
+    expect(wrapper.find('button').text()).toBe('calcular')
+  })
 })
