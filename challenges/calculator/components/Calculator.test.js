@@ -28,10 +28,10 @@ describe('Calculator', () => {
   })
 
   it('should call onChange when input changes', () => {
-    const wrapper = shallow(<Calculator />)
+    const wrapper = mount(<Calculator />)
     const input = wrapper.find('input')
     input.simulate('change', '2+2')
-    wrapper.setState({ input: '4' })
+    expect(wrapper.state('result')).toEqual('4')
   })
 })
 
