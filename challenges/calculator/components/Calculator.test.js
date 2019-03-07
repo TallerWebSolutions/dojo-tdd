@@ -54,6 +54,16 @@ describe('Calculator', () => {
     button.simulate('click')
     expect(wrapper.state('result')).toEqual(8)
   })
+
+  it('should set result state as 2 when input 4-2', () => {
+    const wrapper = mount(<Calculator />)
+    const input = wrapper.find('input')
+    const event = { target: { value: '4-2' } }
+    input.simulate('change', event)
+    const button = wrapper.find('button')
+    button.simulate('click')
+    expect(wrapper.state('result')).toEqual(2)
+  })
 })
 
 describe('UserInput', () => {
