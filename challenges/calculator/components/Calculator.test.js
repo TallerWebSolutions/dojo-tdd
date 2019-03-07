@@ -68,8 +68,9 @@ describe('Calculator', () => {
     expect(result.text()).toEqual('2')
   })
 
-  it('should display 2 inside Result component', () => {
+  it.only('should reset current state of calculator', () => {
     const wrapper = mount(<Calculator />)
+    wrapper.setState({ input: '2+2', result: '4' })
 
     expect(wrapper.state()).toEqual({ input: '', result: '' })
   })
