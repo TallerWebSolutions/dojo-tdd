@@ -5,22 +5,22 @@ import Result from './Result'
 import Button from './Button'
 
 class Calculator extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {
-      input: ''
+      input: '',
     }
   }
 
   render() {
     return (
       <div>
-        <UserInput value={ this.state.input } />
+        <UserInput value={this.state.input} />
         <Result />
         <Button />
       </div>
-  )}
+    )
+  }
 }
 
 export default Calculator
