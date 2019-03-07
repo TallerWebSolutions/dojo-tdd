@@ -55,7 +55,7 @@ describe('Calculator', () => {
     expect(wrapper.state('result')).toEqual(8)
   })
 
-  it.only('should display 2 inside Result component', () => {
+  it('should display 2 inside Result component', () => {
     const wrapper = mount(<Calculator />)
     const input = wrapper.find('input')
     const event = { target: { value: '4-2' } }
@@ -64,6 +64,11 @@ describe('Calculator', () => {
     button.simulate('click')
     const result = wrapper.find(Result)
     expect(result.text()).toEqual('2')
+  })
+
+  it.only('should have a reset button', () => {
+    const wrapper = mount(<Calculator />)
+    expect(wrapper.find(ResetButton)).toHaveLength(1)
   })
 })
 
