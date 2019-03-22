@@ -92,9 +92,15 @@ describe('Calculator', () => {
     })
   })
 
-  it('should have supported operations buttons', () => {
+  it.only('should have supported operations buttons', () => {
     const wrapper = mount(<Calculator />)
     const operationsButtons = wrapper.find(Operation)
+
+    supportedOperators.forEach(operator => {
+      expect(
+        operationsButtons.filterWhere(button => button.text() === 'asdfasdf')
+      )
+    })
 
     expect(operationsButtons).toHaveLength(supportedOperators.length)
   })
