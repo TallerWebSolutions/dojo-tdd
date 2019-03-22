@@ -98,10 +98,8 @@ describe('Calculator', () => {
 
     supportedOperators.forEach(operator => {
       expect(
-        operationsButtons
-          .filterWhere(button => button.text() === operator)
-          .toHaveLength(1)
-      )
+        operationsButtons.filterWhere(button => button.text() === operator)
+      ).toHaveLength(1)
     })
 
     expect(operationsButtons).toHaveLength(supportedOperators.length)
