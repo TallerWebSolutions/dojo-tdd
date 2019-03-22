@@ -1,4 +1,4 @@
-export const supportedOperators = ['+', '-', '*', '/', '^']
+const supportedOperators = ['+', '-', '*', '/', '^']
 const RADIX_DECIMAL = 10
 
 const sum = (a, b) => a + b
@@ -66,4 +66,5 @@ module.exports = {
   extractOperator,
   exponential,
   extractTokens,
+  supportedOperators,
 }
