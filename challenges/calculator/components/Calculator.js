@@ -54,6 +54,12 @@ class Calculator extends React.Component {
             onClick={() => this.onNumber(number.toString())}
           />
         ))}
+
+        <Operation />
+        <Operation />
+        <Operation />
+        <Operation />
+        <Operation />
       </div>
     )
   }

@@ -90,6 +90,14 @@ describe('Calculator', () => {
     })
   })
 
+  it('should have supported operations buttons', () => {
+    const supportedOperations = ['+', '-', '*', '/', '^']
+    const wrapper = mount(<Calculator />)
+    const operationsButtons = wrapper.find(Operation)
+
+    expect(operationsButtons).toHaveLength(5)
+  })
+
   it('should set number `2` to the input on click', () => {
     const wrapper = mount(<Calculator />)
     const numbersButtons = wrapper.find(Number)
