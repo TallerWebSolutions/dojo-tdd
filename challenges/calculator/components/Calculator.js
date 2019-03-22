@@ -38,7 +38,11 @@ class Calculator extends React.Component {
     }))
   }
 
-  onOperation() {}
+  onOperation() {
+    this.setState(({ input }) => ({
+      input: input + '+',
+    }))
+  }
 
   render() {
     const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
