@@ -59,7 +59,11 @@ class Calculator extends React.Component {
         ))}
 
         {supportedOperators.map(operator => (
-          <Operation operation={operator} key={operator} />
+          <Operation
+            operation={operator}
+            key={operator}
+            onClick={() => this.onOperation()}
+          />
         ))}
       </div>
     )
