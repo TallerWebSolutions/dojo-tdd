@@ -240,7 +240,7 @@ describe('Operation button', () => {
     expect(wrapper.text()).toBe('-')
   })
 
-  it('Should execute a function when clicked', () => {
+  it('should execute a function when clicked', () => {
     const onClick = jest.fn()
     const wrapper = shallow(<Operation onClick={onClick} />)
 
