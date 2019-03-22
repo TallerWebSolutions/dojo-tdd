@@ -7,7 +7,7 @@ import ResetButton from './ResetButton'
 import Number from './Number'
 import Operation from './Operation'
 
-import { exec as calculate } from '../calculator'
+import { exec as calculate, supportedOperators } from '../calculator'
 
 const initialState = {
   input: '',
@@ -56,11 +56,9 @@ class Calculator extends React.Component {
           />
         ))}
 
-        <Operation />
-        <Operation />
-        <Operation />
-        <Operation />
-        <Operation />
+        {supportedOperators.map(operator => (
+          <Operation operator={operator} />
+        ))}
       </div>
     )
   }
