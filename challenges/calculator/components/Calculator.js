@@ -34,7 +34,7 @@ class Calculator extends React.Component {
   onNumber(number) {
     // this.setState({ input: number });
     this.setState(({ input }) => ({
-      input: input.concat(number),
+      input: number,
     }))
   }
 
