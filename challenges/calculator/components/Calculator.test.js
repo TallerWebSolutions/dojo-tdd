@@ -137,28 +137,9 @@ describe('Calculator', () => {
     expect(wrapper.state().input).toEqual('35')
   })
 
-  it('should add operation `+` to the input on click', () => {
-    const wrapper = mount(<Calculator />)
-    wrapper
-      .find(Operation)
-      .filterWhere(button => button.text() === '+')
-      .simulate('click')
-    expect(wrapper.find(UserInput).prop('value')).toEqual('+')
-  })
-
-  it('should add operation `-` to the input on click', () => {
-    const wrapper = mount(<Calculator />)
-    wrapper
-      .find(Operation)
-      .filterWhere(button => button.text() === '-')
-      .simulate('click')
-    expect(wrapper.find(UserInput).prop('value')).toEqual('-')
-  })
-
   it('should add operation to the input on click', () => {
-    const wrapper = mount(<Calculator />)
-
     supportedOperators.forEach(operator => {
+      const wrapper = mount(<Calculator />)
       wrapper
         .find(Operation)
         .filterWhere(button => button.text() === operator)
