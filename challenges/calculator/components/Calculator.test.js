@@ -210,3 +210,11 @@ describe('Numbers', () => {
     expect(onClick).toHaveBeenCalled()
   })
 })
+
+describe('Plus button', () => {
+  it('should render a `plus button`', () => {
+    const wrapper = shallow(<Number number={1} />)
+
+    expect(wrapper.text()).toBe('1')
+  })
+})
