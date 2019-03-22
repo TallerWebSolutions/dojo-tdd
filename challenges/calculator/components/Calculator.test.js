@@ -110,7 +110,7 @@ describe('Calculator', () => {
     expect(wrapper.state().input).toEqual('3')
   })
 
-  it.only('should set number `35` to the input on click', () => {
+  it('should set number `35` to the input on click', () => {
     const wrapper = mount(<Calculator />)
     const numbersButton = wrapper.find(Number)
 
