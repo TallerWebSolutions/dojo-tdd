@@ -22,7 +22,7 @@ class Calculator extends React.Component {
   onChange(e) {
     this.setState(prevState => {
       let SCIENCE = prevState.input.concat(e.target.value)
-      console.log(SCIENCE)
+      console.log('This is the log', SCIENCE)
       // return {
       //   input: SCIENCE,
       //   result: state.result,
