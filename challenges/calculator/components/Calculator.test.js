@@ -136,6 +136,10 @@ describe('Calculator', () => {
     expect(wrapper.find(UserInput).prop('value')).toEqual('35')
     expect(wrapper.state().input).toEqual('35')
   })
+
+  it('should add operation to the input on click', () => {
+    expect(false).toBeTruthy()
+  })
 })
 
 describe('UserInput', () => {
