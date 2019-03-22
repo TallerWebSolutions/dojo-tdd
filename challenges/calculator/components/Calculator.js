@@ -1,42 +1,43 @@
-import React from "react";
+import React from 'react'
 
-import UserInput from "./UserInput";
-import Result from "./Result";
-import CalcButton from "./CalcButton";
-import ResetButton from "./ResetButton";
-import Number from "./Number";
+import UserInput from './UserInput'
+import Result from './Result'
+import CalcButton from './CalcButton'
+import ResetButton from './ResetButton'
+import Number from './Number'
 
-import { exec as calculate } from "../calculator";
+import { exec as calculate } from '../calculator'
 
 const initialState = {
-  input: "",
-  result: ""
-};
+  input: '',
+  result: '',
+}
 
 class Calculator extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = initialState;
+    super(props)
+    this.state = initialState
   }
 
   onChange(e) {
-    this.setState({ input: e.target.value });
+    new_state = this.state.value.concat(e.target.value)
+    this.setState({ input: new_state })
   }
 
   onCalculate() {
-    this.setState({ result: calculate(this.state.input) });
+    this.setState({ result: calculate(this.state.input) })
   }
 
   onReset() {
-    this.setState(initialState);
+    this.setState(initialState)
   }
 
   onNumber(number) {
-    this.setState({ input: number });
+    this.setState({ input: number })
   }
 
   render() {
-    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     return (
       <div>
@@ -53,8 +54,8 @@ class Calculator extends React.Component {
           />
         ))}
       </div>
-    );
+    )
   }
 }
 
-export default Calculator;
+export default Calculator
