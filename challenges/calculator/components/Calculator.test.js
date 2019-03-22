@@ -110,7 +110,16 @@ describe("Calculator", () => {
     expect(wrapper.state().input).toEqual("3");
   });
 
-  it.todo("should set number when input number");
+  it.only("should set number `35` to the input on click", () => {
+    const wrapper = mount(<Calculator />);
+    const numbersButtons = wrapper.find(Number);
+
+    numbersButtons
+      .filterWhere(button => button.text() === "35")
+      .simulate("click");
+    expect(wrapper.find(UserInput).prop("value")).toEqual("35");
+    expect(wrapper.state().input).toEqual("35");
+  });
 });
 
 describe("UserInput", () => {
