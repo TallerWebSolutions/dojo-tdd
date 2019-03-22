@@ -278,6 +278,6 @@ describe('Operations', () => {
 
     wrapper.find(CalcButton).simulate('click')
 
-    expect(wrapper.find(UserInput).prop('value')).toEqual('4')
+    expect(wrapper.find(Result).prop('value')).toEqual('4')
   })
 })
