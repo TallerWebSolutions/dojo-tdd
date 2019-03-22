@@ -66,7 +66,7 @@ class Calculator extends React.Component {
           <Operation
             operation={operator}
             key={operator}
-            onClick={() => this.onOperation()}
+            onClick={() => this.onOperation(operator)}
           />
         ))}
       </div>
