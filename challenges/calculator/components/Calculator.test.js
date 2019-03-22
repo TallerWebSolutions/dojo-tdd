@@ -96,8 +96,6 @@ describe('Calculator', () => {
     const wrapper = mount(<Calculator />)
     const operationsButtons = wrapper.find(Operation)
 
-    console.log(supportedOperators)
-
     expect(operationsButtons).toHaveLength(supportedOperators.length)
   })
 
