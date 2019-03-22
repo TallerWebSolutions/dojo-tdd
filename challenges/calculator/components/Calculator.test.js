@@ -274,6 +274,6 @@ describe('Operations', () => {
     sumOperation.simulate('click')
     numberTwo.simulate('click')
 
-    expect(wrapper.find(UserInput).prop('value')).toEqual('')
+    expect(wrapper.find(UserInput).prop('value')).toEqual('2+2')
   })
 })
