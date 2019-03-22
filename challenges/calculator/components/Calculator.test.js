@@ -1,6 +1,8 @@
 import React from 'react'
 import { render, shallow, mount } from 'enzyme'
 
+import { supportedOperators } from '../calculator'
+
 import Calculator from './Calculator'
 import UserInput from './UserInput'
 import Result from './Result'
@@ -90,12 +92,11 @@ describe('Calculator', () => {
     })
   })
 
-  it('should have supported operations buttons', () => {
-    const supportedOperations = ['+', '-', '*', '/', '^']
+  it.only('should have supported operations buttons', () => {
     const wrapper = mount(<Calculator />)
     const operationsButtons = wrapper.find(Operation)
 
-    expect(operationsButtons).toHaveLength(5)
+    expect(operationsButtons).toHaveLength(supportedOperators.length)
   })
 
   it('should set number `2` to the input on click', () => {

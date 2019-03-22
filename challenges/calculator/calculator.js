@@ -1,4 +1,4 @@
-const supportedOperators = ['+', '-', '*', '/', '^']
+export const supportedOperators = ['+', '-', '*', '/', '^']
 const RADIX_DECIMAL = 10
 
 const sum = (a, b) => a + b
@@ -10,7 +10,7 @@ const multiply = (a, b) => a * b
 const divide = (a, b) => {
   if (b === 0) throw new Error('Impossível dividir por zero')
   return a / b
-} 
+}
 
 const exponential = (a, b) => {
   return Math.pow(a, b)
@@ -18,9 +18,11 @@ const exponential = (a, b) => {
 
 const getOperatorFunc = operator => (...args) => {
   if (!supportedOperators.includes(operator)) {
-    throw new Error('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
+    throw new Error(
+      'Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].'
+    )
   }
-  
+
   const funcOperators = {
     '+': sum,
     '-': subtract,
@@ -28,12 +30,12 @@ const getOperatorFunc = operator => (...args) => {
     '/': divide,
     '^': exponential,
   }
-  
+
   return funcOperators[operator](...args)
 }
 
 const extractTokens = str => {
-  const operators = str.match(/(-?\d)([\*\-\/\+\^])(-?\d)/) 
+  const operators = str.match(/(-?\d)([\*\-\/\+\^])(-?\d)/)
   return operators !== null ? operators.slice(1) : null
 }
 
@@ -47,7 +49,8 @@ const extractOperator = str => {
 const exec = expression => {
   const operator = extractOperator(expression)
   const operatorFunc = getOperatorFunc(operator)
-  const numbers = expression.split(operator)
+  const numbers = expression
+    .split(operator)
     .map(number => parseInt(number, RADIX_DECIMAL))
 
   return operatorFunc(...numbers)
@@ -62,5 +65,5 @@ module.exports = {
   getOperatorFunc,
   extractOperator,
   exponential,
-  extractTokens
+  extractTokens,
 }
