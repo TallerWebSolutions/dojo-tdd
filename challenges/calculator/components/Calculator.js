@@ -38,9 +38,9 @@ class Calculator extends React.Component {
     }))
   }
 
-  onOperation() {
+  onOperation(operator) {
     this.setState(({ input }) => ({
-      input: input + '+',
+      input: input + operator,
     }))
   }
 
