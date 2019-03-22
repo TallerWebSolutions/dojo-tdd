@@ -40,7 +40,7 @@ class Calculator extends React.Component {
 
   onOperation(operator) {
     this.setState(({ input }) => ({
-      input: input + operator,
+      input: input.concat(operator),
     }))
   }
 
