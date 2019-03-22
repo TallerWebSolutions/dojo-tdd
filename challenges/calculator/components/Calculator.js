@@ -57,7 +57,7 @@ class Calculator extends React.Component {
         ))}
 
         {supportedOperators.map(operator => (
-          <Operation operation={operator} />
+          <Operation operation={operator} key={operator} />
         ))}
       </div>
     )

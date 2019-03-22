@@ -92,7 +92,7 @@ describe('Calculator', () => {
     })
   })
 
-  it.only('should have supported operations buttons', () => {
+  it('should have supported operations buttons', () => {
     const wrapper = mount(<Calculator />)
     const operationsButtons = wrapper.find(Operation)
 
