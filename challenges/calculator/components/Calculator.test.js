@@ -259,3 +259,21 @@ describe('Operation button', () => {
     expect(onClick).toHaveBeenCalled()
   })
 })
+
+describe('Operations', () => {
+  it('should add two positive integers', () => {
+    const wrapper = mount(<Calculator />)
+    const numberTwo = wrapper
+      .find(Number)
+      .filterWhere(number => number.text() === '2')
+    const sumOperation = wrapper
+      .find(Operation)
+      .filterWhere(operation => operation.text() === '+')
+
+    numberTwo.simulate('click')
+    sumOperation.simulate('click')
+    numberTwo.simulate('click')
+
+    expect(wrapper.find(UserInput).prop('value')).toEqual('')
+  })
+})
