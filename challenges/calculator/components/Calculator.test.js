@@ -213,7 +213,7 @@ describe('Numbers', () => {
 
 describe('Plus button', () => {
   it('should render a Plus button', () => {
-    const wrapper = shallow(<Plus />)
+    const wrapper = shallow(<Operation />)
 
     expect(wrapper.text()).toBe('+')
   })
