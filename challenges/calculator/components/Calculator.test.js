@@ -275,5 +275,9 @@ describe('Operations', () => {
     numberTwo.simulate('click')
 
     expect(wrapper.find(UserInput).prop('value')).toEqual('2+2')
+
+    wrapper.find(CalcButton).simulate('click')
+
+    expect(wrapper.find(UserInput).prop('value')).toEqual('4')
   })
 })
