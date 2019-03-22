@@ -112,13 +112,11 @@ describe('Calculator', () => {
 
   it.only('should set number `35` to the input on click', () => {
     const wrapper = mount(<Calculator />)
-    const numbersButtons = wrapper.find(Number)
+    const numbersButton = wrapper.find(Number)
 
-    numbersButtons
-      .filterWhere(button => button.text() === '3')
-      .simulate('click')
-      .filterWhere(button => button.text() === '5')
-      .simulate('click')
+    numbersButton.filterWhere(button => button.text() === '3').simulate('click')
+    numbersButton.filterWhere(button => button.text() === '5').simulate('click')
+
     expect(wrapper.find(UserInput).prop('value')).toEqual('35')
     expect(wrapper.state().input).toEqual('35')
   })
