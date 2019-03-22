@@ -20,8 +20,13 @@ class Calculator extends React.Component {
   }
 
   onChange(e) {
-    new_state = this.state.value.concat(e.target.value)
-    this.setState({ input: new_state })
+    this.setState(state => {
+      let SCIENCE = state.input.concat(e.target.value)
+      return {
+        input: SCIENCE,
+        result: state.result,
+      }
+    })
   }
 
   onCalculate() {
