@@ -154,6 +154,18 @@ describe('Calculator', () => {
       .simulate('click')
     expect(wrapper.find(UserInput).prop('value')).toEqual('-')
   })
+
+  it('should add operation to the input on click', () => {
+    const wrapper = mount(<Calculator />)
+
+    supportedOperators.forEach(operator => {
+      wrapper
+        .find(Operation)
+        .filterWhere(button => button.text() === operator)
+        .simulate('click')
+      expect(wrapper.find(UserInput).prop('value')).toEqual(operator)
+    })
+  })
 })
 
 describe('UserInput', () => {
