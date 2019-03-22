@@ -98,7 +98,9 @@ describe('Calculator', () => {
 
     supportedOperators.forEach(operator => {
       expect(
-        operationsButtons.filterWhere(button => button.text() === 'asdfasdf')
+        operationsButtons
+          .filterWhere(button => button.text() === operator)
+          .toHaveLength(1)
       )
     })
 
