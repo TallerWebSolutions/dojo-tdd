@@ -162,7 +162,6 @@ describe('UserInput', () => {
   })
 
   it('should have an input with value which can change', () => {
-    const inputState = '2+2'
     const onChange = jest.fn()
     const wrapper = shallow(<UserInput value="2+2" onChange={onChange} />)
     const event = { target: { value: '3+3' } }
