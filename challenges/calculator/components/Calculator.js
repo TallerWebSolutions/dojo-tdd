@@ -5,6 +5,7 @@ import Result from './Result'
 import CalcButton from './CalcButton'
 import ResetButton from './ResetButton'
 import Number from './Number'
+import Operation from './Operation'
 
 import { exec as calculate } from '../calculator'
 
