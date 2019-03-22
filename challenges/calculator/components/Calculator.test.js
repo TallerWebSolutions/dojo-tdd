@@ -212,10 +212,16 @@ describe('Numbers', () => {
   })
 })
 
-describe('Plus button', () => {
+describe('Operation button', () => {
   it('should render a Plus button', () => {
     const wrapper = shallow(<Operation operation="+" />)
 
     expect(wrapper.text()).toBe('+')
+  })
+
+  it('should render a Minus button', () => {
+    const wrapper = shallow(<Operation operation="-" />)
+
+    expect(wrapper.text()).toBe('-')
   })
 })
