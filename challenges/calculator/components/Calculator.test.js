@@ -8,6 +8,7 @@ import UserInput from './UserInput'
 import Result from './Result'
 import CalcButton from './CalcButton'
 import ResetButton from './ResetButton'
+import BackspaceButton from './BackspaceButton'
 import Number from './Number'
 import Operation from './Operation'
 
