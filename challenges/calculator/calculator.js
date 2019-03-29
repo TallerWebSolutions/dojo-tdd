@@ -34,7 +34,7 @@ const getOperatorFunc = operator => (...args) => {
 }
 
 const extractTokens = str => {
-  const operators = str.match(/(-?\d)([\*\-\/\+\^])(-?\d)/)
+  const operators = str.match(/([-\+]?\d)([\*\-\/\+\^])(-?\d)/)
   return operators !== null ? operators.slice(1) : null
 }
 
