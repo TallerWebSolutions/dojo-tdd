@@ -1,4 +1,3 @@
-// const supportedOperators = ['+', '-', '*', '/', '^']
 const RADIX_DECIMAL = 10
 
 const sum = (a, b) => a + b
