@@ -150,6 +150,8 @@ describe('Calculator', () => {
   })
 
   it('should delete one character by clicking on backspace', () => {
+    const wrapper = mount(<Calculator />)
+    // const BackspaceButton = wrapper.find(Backspace)
     expect('asd').toBeFalsy()
   })
 })
@@ -284,5 +286,21 @@ describe('Operations', () => {
     wrapper.find(CalcButton).simulate('click')
 
     expect(wrapper.find(Result).prop('value')).toEqual(4)
+  })
+})
+
+describe('BackspaceButton', () => {
+  it.only('should have a button', () => {
+    const wrapper = shallow(<BackspaceButton />)
+    expect(wrapper.find('button')).toHaveLength(1)
+  })
+
+  it('Should execute a function when clicked', () => {
+    const fn = jest.fn()
+    const wrapper = shallow(<CalcButton onClick={fn} />)
+
+    wrapper.simulate('click')
+
+    expect(fn).toHaveBeenCalled()
   })
 })
