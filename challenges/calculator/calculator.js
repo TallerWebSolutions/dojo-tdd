@@ -49,7 +49,7 @@ const exec = expression => {
   const operatorFunc = getOperatorFunc(operator)
 
   if (expression.match(/^[\+]\d/)) {
-    expression = '0' + expression
+    expression = expression.slice(1)
   }
   // console.log(expression)
   const numbers = expression
