@@ -152,7 +152,7 @@ describe('Calculator', () => {
 
   it.only('should delete one character by clicking on backspace', () => {
     const wrapper = mount(<Calculator />)
-    // const BackspaceButton = wrapper.find(Backspace)
+    wrapper.find(BackspaceButton).simulate('click')
     expect('asd').toBeFalsy()
   })
 })
