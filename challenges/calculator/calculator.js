@@ -55,6 +55,7 @@ const exec = expression => {
     .map(number => parseInt(number, RADIX_DECIMAL))
 
   const numbers2 = numbers[0] === NaN ? numbers.slice(1) : numbers
+  console.log(numbers)
   return operatorFunc(...numbers2)
 }
 
