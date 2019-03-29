@@ -47,16 +47,12 @@ const extractOperator = str => {
 const exec = expression => {
   const operator = extractOperator(expression)
   const operatorFunc = getOperatorFunc(operator)
-
   expression = expression.replace(/^(\++)/, '').replace(/^(\*+)/, '')
 
   const numbers = expression
     .split(operator)
     .map(number => parseInt(number, RADIX_DECIMAL))
-
-  const numbers2 = Number.isNaN(numbers[0]) ? numbers.slice(1) : numbers
-  console.log(numbers2)
-  return operatorFunc(...numbers2)
+  return operatorFunc(...numbers)
 }
 
 module.exports = {
