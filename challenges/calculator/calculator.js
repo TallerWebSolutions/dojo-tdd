@@ -51,10 +51,11 @@ const exec = expression => {
   if (expression.match(/^[\+\-]\d/)) {
     expression = '0' + expression
   }
-
+  console.log(expression)
   const numbers = expression
     .split(operator)
     .map(number => parseInt(number, RADIX_DECIMAL))
+  console.log(numbers)
   return operatorFunc(...numbers)
 }
 
