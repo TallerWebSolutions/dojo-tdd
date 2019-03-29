@@ -47,11 +47,13 @@ const extractOperator = str => {
 const exec = expression => {
   const operator = extractOperator(expression)
   const operatorFunc = getOperatorFunc(operator)
-  expression = expression.replace(/^(\++)/, '')
+
+  expression = expression.replace(/^(\++)/, '').replace(/^(\*+)/, '')
 
   const numbers = expression
     .split(operator)
     .map(number => parseInt(number, RADIX_DECIMAL))
+
   return operatorFunc(...numbers)
 }
 
