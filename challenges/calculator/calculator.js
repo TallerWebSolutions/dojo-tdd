@@ -29,7 +29,7 @@ const getOperatorFunc = operator => (...args) => {
       'Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].'
     )
   }
-
+  console.log(operator)
   return funcOperators[operator](...args)
 }
 
@@ -51,11 +51,9 @@ const exec = expression => {
   if (expression.match(/^\+\d/)) {
     expression = expression.slice(1)
   }
-  console.log(expression)
   // expression[1]
   // console.log(expression)
   const operatorFunc = getOperatorFunc(operator)
-  console.log(operatorFunc)
   const numbers = expression
     .split(operator)
     // .map(number => {
