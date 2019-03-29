@@ -47,8 +47,12 @@ const extractOperator = str => {
 
 const exec = expression => {
   const operator = extractOperator(expression)
-  console.log(expression)
-  expression.match(/([\+]?\d)/)
+  if (expression.match(/([\+]?\d)/)) {
+    console.log('pegou')
+  } else {
+    console.log('não')
+  }
+  // console.log(expression)
   const operatorFunc = getOperatorFunc(operator)
   const numbers = expression
     .split(operator)
