@@ -47,15 +47,15 @@ const extractOperator = str => {
 
 const exec = expression => {
   const operator = extractOperator(expression)
-
-  console.log(expression)
+  // expression[1]
+  // console.log(expression)
   const operatorFunc = getOperatorFunc(operator)
   const numbers = expression
     .split(operator)
-    // .map(number => {
-    //   console.log(number)
-    //   return number
-    // })
+    .map(number => {
+      console.log(number)
+      return number
+    })
     .map(number => parseInt(number, RADIX_DECIMAL))
 
   return operatorFunc(...numbers)
