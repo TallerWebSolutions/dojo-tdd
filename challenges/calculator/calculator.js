@@ -35,6 +35,7 @@ const getOperatorFunc = operator => (...args) => {
 
 const extractTokens = str => {
   const operators = str.match(/([\-\+]?\d)([\*\-\/\+\^])([\-\+]?\d)/)
+  console.log(operators)
   return operators !== null ? operators.slice(1) : null
 }
 
@@ -47,11 +48,9 @@ const extractOperator = str => {
 
 const exec = expression => {
   const operator = extractOperator(expression)
-  if (expression.match(/([\+]?\d)/)) {
-    console.log('pegou')
-  } else {
-    console.log('não')
-  }
+  // console.log(expression)
+  // expression.match(/([\+]?\d)/)
+  // expression[1]
   // console.log(expression)
   const operatorFunc = getOperatorFunc(operator)
   const numbers = expression
