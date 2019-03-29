@@ -46,9 +46,9 @@ class Calculator extends React.Component {
   }
 
   onBackspace() {
-    this.setState({
-      input: '',
-    })
+    this.setState(({ input }) => ({
+      input: input.slice(0, -1),
+    }))
   }
 
   render() {
