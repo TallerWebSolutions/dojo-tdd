@@ -78,7 +78,7 @@ describe('Calculator', () => {
     wrapper.find(ResetButton).simulate('click')
 
     expect(wrapper.state()).toEqual({ input: '', result: '' })
-    expect(wrapper.find(Result.value)).toEqual('')
+    expect(wrapper.find(Result).prop('value')).toEqual('')
   })
 
   it('should have number buttons from 0 a 9', () => {
