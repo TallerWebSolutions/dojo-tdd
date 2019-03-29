@@ -47,8 +47,9 @@ const extractOperator = str => {
 
 const exec = expression => {
   const operator = extractOperator(expression)
-  const operatorFunc = getOperatorFunc(operator)
+
   console.log(expression)
+  const operatorFunc = getOperatorFunc(operator)
   const numbers = expression
     .split(operator)
     // .map(number => {
