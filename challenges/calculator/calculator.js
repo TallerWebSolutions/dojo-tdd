@@ -17,7 +17,7 @@ const exponential = (a, b) => {
 }
 
 const getOperatorFunc = operator => (...args) => {
-  if (!supportedOperators.includes(operator)) {
+  if (!Object.keys(funcOperators).includes(operator)) {
     throw new Error(
       'Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].'
     )
