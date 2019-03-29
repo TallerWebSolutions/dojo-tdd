@@ -157,8 +157,9 @@ describe('Calculator', () => {
       .filterWhere(button => button.text() === '2')
       .simulate('click')
 
+    expect(wrapper.find(UserInput).prop('value')).toEqual(2)
     wrapper.find(BackspaceButton).simulate('click')
-    expect(wrapper.find(Result).prop('value')).toEqual('')
+    expect(wrapper.find(UserInput).prop('value')).toEqual('')
   })
 })
 
