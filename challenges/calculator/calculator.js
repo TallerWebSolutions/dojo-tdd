@@ -49,8 +49,6 @@ const exec = expression => {
   const operator = extractOperator(expression)
   console.log(expression)
   expression.match(/([\+]?\d)/)
-  // expression[1]
-  // console.log(expression)
   const operatorFunc = getOperatorFunc(operator)
   const numbers = expression
     .split(operator)
