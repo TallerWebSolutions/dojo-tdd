@@ -150,7 +150,7 @@ describe('Calculator', () => {
     })
   })
 
-  it.only('should delete one character by clicking on backspace', () => {
+  it('should delete character by clicking on backspace', () => {
     const wrapper = mount(<Calculator />)
     const numbersButtons = wrapper.find(Number)
     numbersButtons
@@ -160,6 +160,21 @@ describe('Calculator', () => {
     expect(wrapper.find(UserInput).prop('value')).toEqual('2')
     wrapper.find(BackspaceButton).simulate('click')
     expect(wrapper.find(UserInput).prop('value')).toEqual('')
+  })
+
+  it('should delete only one char when backspacing', () => {
+    const wrapper = mount(<Calculator />)
+    const numbersButtons = wrapper.find(Number)
+    const numberButton = numbersButtons.filterWhere(
+      button => button.text() === '2'
+    )
+
+    numberButton.simulate('click')
+    numberButton.simulate('click')
+
+    expect(wrapper.find(UserInput).prop('value')).toEqual('22')
+    wrapper.find(BackspaceButton).simulate('click')
+    expect(wrapper.find(UserInput).prop('value')).toEqual('2')
   })
 })
 
