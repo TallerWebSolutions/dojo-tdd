@@ -35,6 +35,7 @@ const getOperatorFunc = operator => (...args) => {
 
 const extractTokens = str => {
   const operators = str.match(/([\-\+]?\d)([\*\-\/\+\^])([\-\+]?\d)/)
+  console.log(operators)
   return operators !== null ? operators.slice(1) : null
 }
 
@@ -52,10 +53,10 @@ const exec = expression => {
   const operatorFunc = getOperatorFunc(operator)
   const numbers = expression
     .split(operator)
-    .map(number => {
-      console.log(number)
-      return number
-    })
+    // .map(number => {
+    //   console.log(number)
+    //   return number
+    // })
     .map(number => parseInt(number, RADIX_DECIMAL))
 
   return operatorFunc(...numbers)
