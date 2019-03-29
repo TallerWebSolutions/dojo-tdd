@@ -152,8 +152,13 @@ describe('Calculator', () => {
 
   it.only('should delete one character by clicking on backspace', () => {
     const wrapper = mount(<Calculator />)
+    const numbersButtons = wrapper.find(Number)
+    numbersButtons
+      .filterWhere(button => button.text() === '2')
+      .simulate('click')
+
     wrapper.find(BackspaceButton).simulate('click')
-    expect('asd').toBeFalsy()
+    expect(wrapper.find(Result).prop('value')).toEqual('')
   })
 })
 
