@@ -46,16 +46,18 @@ const extractOperator = str => {
 
 const exec = expression => {
   const operator = extractOperator(expression)
-  const a = expression.match(/([\-\+]?\d)([\*\-\/\+\^])([\-\+]?\d)/)
-  console.log(a)
-  if (expression.match(/^\+\d/)) {
-    expression = expression.slice(1)
-  }
-  const operatorFunc = getOperatorFunc(operator)
-  const numbers = expression
-    .split(operator)
-    .map(number => parseInt(number, RADIX_DECIMAL))
-  return operatorFunc(...numbers)
+  const arr = expression.match(/([\-\+]?\d)([\*\-\/\+\^])([\-\+]?\d)/)
+  const operatorFunc = getOperatorFunc(arr[2])
+  return operatorFunc(arr[1], arr[3])
+
+  // if (expression.match(/^\+\d/)) {
+  //   expression = expression.slice(1)
+  // }
+  // const operatorFunc = getOperatorFunc(operator)
+  // const numbers = expression
+  //   .split(operator)
+  //   .map(number => parseInt(number, RADIX_DECIMAL))
+  // return operatorFunc(...numbers)
 }
 
 module.exports = {
