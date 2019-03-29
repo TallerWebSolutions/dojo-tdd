@@ -161,10 +161,10 @@ describe('calculator', () => {
         expect(exec('1*1')).toBe(1)
       })
 
-      it.only('should return 4 when 2 * 2', () => {
+      it('should return 4 when 2 * 2', () => {
         expect(exec('2*2')).toBe(4)
       })
-      it('should return 4 when 2 * 2', () => {
+      it.only('should return 4 when 2 * 2', () => {
         expect(exec('-2*2')).toBe(-4)
       })
     })
