@@ -196,7 +196,7 @@ describe('calculator', () => {
         expect(exec('-7+5')).toBe(-2)
       })
 
-      it('should return 10 when +3+7', () => {
+      it.only('should return 10 when +3+7', () => {
         expect(exec('+3+7')).toBe(10)
       })
     })
