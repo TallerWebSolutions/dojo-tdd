@@ -1,13 +1,5 @@
-const supportedOperators = ['+', '-', '*', '/', '^']
+// const supportedOperators = ['+', '-', '*', '/', '^']
 const RADIX_DECIMAL = 10
-
-const funcOperators = {
-  '+': sum,
-  '-': subtract,
-  '*': multiply,
-  '/': divide,
-  '^': exponential,
-}
 
 const sum = (a, b) => a + b
 
@@ -22,6 +14,14 @@ const divide = (a, b) => {
 
 const exponential = (a, b) => {
   return Math.pow(a, b)
+}
+
+const funcOperators = {
+  '+': sum,
+  '-': subtract,
+  '*': multiply,
+  '/': divide,
+  '^': exponential,
 }
 
 const getOperatorFunc = operator => (...args) => {
