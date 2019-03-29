@@ -48,7 +48,8 @@ const exec = expression => {
   const operator = extractOperator(expression)
   const arr = expression.match(/([\-\+]?\d)([\*\-\/\+\^])([\-\+]?\d)/)
   const operatorFunc = getOperatorFunc(arr[2])
-  return operatorFunc(3, 7)
+
+  return operatorFunc(parseInt(arr[1]), parseInt(arr[2]))
   // return operatorFunc([arr[1], arr[3]])
 
   // if (expression.match(/^\+\d/)) {
