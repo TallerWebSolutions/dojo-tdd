@@ -56,6 +56,7 @@ const exec = expression => {
   //   return number
   // })
   // .map(number => parseInt(number, RADIX_DECIMAL))
+  console.log(expression)
   console.log(numbers)
   return operatorFunc(...numbers)
 }
