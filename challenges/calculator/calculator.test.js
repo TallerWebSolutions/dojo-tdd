@@ -7,7 +7,7 @@ const {
   getOperatorFunc,
   extractOperator,
   exponential,
-  extractTokens
+  extractTokens,
 } = require('./calculator')
 
 describe('calculator', () => {
@@ -58,7 +58,7 @@ describe('calculator', () => {
       expect(divide(4, 2)).toBe(2)
     })
     it('should throw an error on 10/0', () => {
-      expect(() => divide(10, 0)).toThrowError("Impossível dividir por zero")
+      expect(() => divide(10, 0)).toThrowError('Impossível dividir por zero')
     })
     it('should return -5 on 10/-2', () => {
       expect(divide(10, -2)).toBe(-5)
@@ -79,7 +79,7 @@ describe('calculator', () => {
     })
   })
 
-  describe('getOperatorFunc', ()=> {
+  describe('getOperatorFunc', () => {
     it('should return a sum when input is "+"', () => {
       expect(getOperatorFunc('+')(2, 2)).toBe(4)
     })
@@ -96,7 +96,9 @@ describe('calculator', () => {
       expect(getOperatorFunc('^')(2, 3)).toBe(8)
     })
     it('should throw an error when operator is not valid', () => {
-      expect(() => getOperatorFunc('@')(4, 2)).toThrowError('Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].')
+      expect(() => getOperatorFunc('@')(4, 2)).toThrowError(
+        'Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].'
+      )
     })
   })
 
@@ -110,15 +112,15 @@ describe('calculator', () => {
     it('should return plus operator for sum', () => {
       expect(extractOperator('1+1')).toBe('+')
     })
-    
+
     it('should return minus operator for subtraction', () => {
       expect(extractOperator('1-1')).toBe('-')
     })
-    
+
     it('should return division operator for division', () => {
       expect(extractOperator('1/1')).toBe('/')
     })
-    
+
     it('should return times operator for multiplication', () => {
       expect(extractOperator('1*1')).toBe('*')
     })
@@ -132,7 +134,7 @@ describe('calculator', () => {
     })
   })
 
-  describe('exec', ()=> {
+  describe('exec', () => {
     describe('sum', () => {
       it('should return 2 when 1 + 1', () => {
         expect(exec('1+1')).toBe(2)
@@ -165,7 +167,7 @@ describe('calculator', () => {
       it('should return 4 when 2 * 2', () => {
         expect(exec('-2*2')).toBe(-4)
       })
-    }) 
+    })
 
     describe('multiply', () => {
       it('should return 1 when 1 * 1', () => {
@@ -189,6 +191,14 @@ describe('calculator', () => {
       })
     })
 
-  })
+    describe('expression', () => {
+      it('should return -2 when -7+5', () => {
+        expect(exec('-7+5')).toBe(-2)
+      })
 
+      it('should return 10 when +3+7', () => {
+        expect(exec('+3+7')).toBe(10)
+      })
+    })
+  })
 })
