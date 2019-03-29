@@ -48,7 +48,7 @@ const extractOperator = str => {
 const exec = expression => {
   const operator = extractOperator(expression)
   console.log(expression)
-  // operator.match(/([\+]?\d)/)
+  expression.match(/([\+]?\d)/)
   // expression[1]
   // console.log(expression)
   const operatorFunc = getOperatorFunc(operator)
