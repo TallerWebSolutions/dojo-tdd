@@ -190,7 +190,7 @@ describe('calculator', () => {
         expect(exec('1^-1')).toBe(1)
       })
     })
-
+    1
     describe('expression', () => {
       it('should return -2 when -7+5', () => {
         expect(exec('-7+5')).toBe(-2)
