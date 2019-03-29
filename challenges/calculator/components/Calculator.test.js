@@ -148,6 +148,10 @@ describe('Calculator', () => {
       expect(wrapper.find(UserInput).prop('value')).toEqual(operator)
     })
   })
+
+  it('should delete one character by clicking on backspace', () => {
+    expect('asd').toBeFalsy()
+  })
 })
 
 describe('UserInput', () => {
