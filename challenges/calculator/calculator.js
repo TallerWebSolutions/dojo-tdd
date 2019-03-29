@@ -66,5 +66,5 @@ module.exports = {
   extractOperator,
   exponential,
   extractTokens,
-  supportedOperators,
+  supportedOperators: Object.keys(funcOperators),
 }
