@@ -53,6 +53,7 @@ class Calculator extends React.Component {
         <Result value={this.state.result} />
         <CalcButton onClick={() => this.onCalculate()}>calcular</CalcButton>
         <ResetButton onClick={() => this.onReset()} />
+        <BackspaceButton />
 
         {numbers.map(number => (
           <Number
