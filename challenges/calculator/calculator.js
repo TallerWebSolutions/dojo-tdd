@@ -29,7 +29,6 @@ const getOperatorFunc = operator => (...args) => {
       'Operador não suportado, utilize os seguintes ["+", "-", "/", "*"].'
     )
   }
-  console.log(operator)
   return funcOperators[operator](...args)
 }
 
