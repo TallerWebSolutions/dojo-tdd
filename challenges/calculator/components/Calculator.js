@@ -45,6 +45,12 @@ class Calculator extends React.Component {
     }))
   }
 
+  onBackspace() {
+    this.setState({
+      input: '',
+    })
+  }
+
   render() {
     const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -54,7 +60,7 @@ class Calculator extends React.Component {
         <Result value={this.state.result} />
         <CalcButton onClick={() => this.onCalculate()}>calcular</CalcButton>
         <ResetButton onClick={() => this.onReset()} />
-        <BackspaceButton />
+        <BackspaceButton onClick={() => this.onBackspace()} />
 
         {numbers.map(number => (
           <Number
