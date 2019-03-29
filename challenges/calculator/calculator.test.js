@@ -142,7 +142,7 @@ describe('calculator', () => {
       it('should return 3 when 2 + 1', () => {
         expect(exec('2+1')).toBe(3)
       })
-      it('should return 30 when 20 + 10', () => {
+      it.only('should return 30 when 20 + 10', () => {
         expect(exec('20+10')).toBe(30)
       })
     })
@@ -190,20 +190,20 @@ describe('calculator', () => {
         expect(exec('1^-1')).toBe(1)
       })
     })
-    describe.only('expression', () => {
+    describe('expression', () => {
       it('should return -2 when -7+5', () => {
         expect(exec('-7+5')).toBe(-2)
       })
 
-      it.only('should return 10 when +3+7', () => {
+      it('should return 10 when +3+7', () => {
         expect(exec('+3+7')).toBe(10)
       })
 
-      it.only('should return 10 when ++3+7', () => {
+      it('should return 10 when ++3+7', () => {
         expect(exec('++3+7')).toBe(10)
       })
 
-      it.only('should return -2 when -1-1', () => {
+      it('should return -2 when -1-1', () => {
         expect(exec('-1-1')).toBe(-2)
       })
     })
