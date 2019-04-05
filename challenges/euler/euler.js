@@ -4,4 +4,4 @@ export const isMultipleFive = isMultiple(5)
 
 export const range = n => new Array(n).fill().map((a, i) => i + 1)
 
-// export const filterIsMultiple =
+export const filterIsMultiple = n => isMultiple(n)
