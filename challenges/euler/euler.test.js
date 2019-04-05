@@ -74,9 +74,9 @@ describe.only('filter multiples', () => {
     expect(result).toEqual([3])
   })
 
-  // it('should filter multiples of 10', () => {
-  //   const arr = range(9)
-  //   const result = filterMultiples(arr)
-  //   expect(result).toEqual([3, 5, 6, 9])
-  // })
+  it('should filter multiples of 9', () => {
+    const arr = range(9)
+    const result = filterMultiples(arr)
+    expect(result).toEqual([3, 5, 6, 9])
+  })
 })
