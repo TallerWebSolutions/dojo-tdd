@@ -91,3 +91,10 @@ describe('filter multiples', () => {
     expect(result).toEqual([3, 5, 6])
   })
 })
+
+describe('Sum', () => {
+  it('should return sum the elements of arr', () => {
+    const arr = rangeBellow(10)
+    expect(sum(arr)).toEqual(23)
+  })
+})
