@@ -1,4 +1,4 @@
-const isMultipleThree = number => false
+const isMultipleThree = number => 3 / number
 
 describe('euler', () => {
   it('should detect if 2 is multiple of 3', () => {
