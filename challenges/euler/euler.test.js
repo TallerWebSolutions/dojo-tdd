@@ -3,7 +3,7 @@ import {
   isMultipleFive,
   isMultiple,
   range,
-  filterIsMultiple,
+  // filterIsMultiple,
   isMultipleByThreeOrFive,
   filterMultiples,
 } from './euler'
