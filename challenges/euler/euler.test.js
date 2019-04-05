@@ -79,15 +79,15 @@ describe('isMultiple by 3 or five', () => {
 })
 
 describe('filter multiples', () => {
-  it('should filter multiples of 3 or 5 from a range below of 5', () => {
-    const arr = range(5)
+  it('should filter multiples of 3 or 5 from a range below 5', () => {
+    const arr = rangeBelow(5)
     const result = filterMultiples(arr)
-    expect(result).toEqual([3, 5])
+    expect(result).toEqual([3])
   })
 
   it('should filter multiples of 3 or 5 from a range below 9 ', () => {
-    const arr = range(9)
+    const arr = rangeBelow(9)
     const result = filterMultiples(arr)
-    expect(result).toEqual([3, 5, 6, 9])
+    expect(result).toEqual([3, 5, 6])
   })
 })
