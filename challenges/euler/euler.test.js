@@ -9,7 +9,7 @@ describe('euler', () => {
     const result = isMultipleThree(3)
     expect(result).toBeTruthy()
   })
-  it('should detect if 5 is multiple of 4', () => {
+  it('should detect if 5 is multiple of 3', () => {
     const result = isMultipleFour(5)
     expect(result).toBeFalsy()
   })
