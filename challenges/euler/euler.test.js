@@ -54,13 +54,13 @@ describe('range', () => {
 describe('filter multiples', () => {
   it('should filter multiples of 3 or 5', () => {
     const arr = range(5)
-    const result = arr.filter(filterIsMultiple)
+    const result = filTerMultiples(arr)
     expect(result).toEqual([3])
   })
 
   it('should filter multiples of 10', () => {
     const arr = range(9)
-    const result = arr.filter(filterIsMultiple)
+    const result = filterMultiples(arr)
     expect(result).toEqual([3, 5, 6, 9])
   })
 })
