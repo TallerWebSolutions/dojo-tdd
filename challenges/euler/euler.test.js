@@ -97,4 +97,7 @@ describe.only('Sum', () => {
   it('should return sum the elements of arr', () => {
     expect(sum([1, 2])).toEqual(3)
   })
+  it('should return `233168` of arr(1000)', () => {
+    expect(sum(sum(rangeBelow(1000)))).toEqual(3)
+  })
 })
