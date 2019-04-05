@@ -22,14 +22,14 @@ describe('euler', () => {
     expect(result).toBeTruthy()
   })
   it('should detect if 999 is multiple of 5', () => {
-    const result = isMultiple(999)
+    const result = isMultipleFive(999)
     expect(result).toBeFalsy()
   })
 })
 
 describe('euler `isMultiple` func', () => {
   it('should detect if a number is multiple of 3', () => {
-    const result = isMultiple(9)
+    const result = isMultiple(9)(3)
     expect(result).toBeTruthy()
   })
 })
