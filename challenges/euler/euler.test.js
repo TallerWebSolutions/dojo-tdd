@@ -5,6 +5,7 @@ import {
   range,
   filterIsMultiple,
   isMultipleByThreeOrFive,
+  filTerMultiples,
 } from './euler'
 
 describe('euler', () => {
