@@ -52,7 +52,7 @@ describe('range', () => {
   })
 })
 
-describe.only('isMultiple by 3 or five', () => {
+describe('isMultiple by 3 or five', () => {
   it('should return true if the given number is multiple of 3 or 5', () => {
     expect(isMultipleByThreeOrFive(1)).toBeFalsy()
     expect(isMultipleByThreeOrFive(2)).toBeFalsy()
@@ -66,16 +66,16 @@ describe.only('isMultiple by 3 or five', () => {
   })
 })
 
-// xdescribe('filter multiples', () => {
-//   it('should filter multiples of 3 or 5', () => {
-//     const arr = range(5)
-//     const result = filTerMultiples(arr)
-//     expect(result).toEqual([3])
-//   })
+describe.only('filter multiples', () => {
+  it('should filter multiples of 3 or 5', () => {
+    const arr = range(5)
+    const result = filTerMultiples(arr)
+    expect(result).toEqual([3])
+  })
 
-//   it('should filter multiples of 10', () => {
-//     const arr = range(9)
-//     const result = filterMultiples(arr)
-//     expect(result).toEqual([3, 5, 6, 9])
-//   })
-// })
+  // it('should filter multiples of 10', () => {
+  //   const arr = range(9)
+  //   const result = filterMultiples(arr)
+  //   expect(result).toEqual([3, 5, 6, 9])
+  // })
+})
