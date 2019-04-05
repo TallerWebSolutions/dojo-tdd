@@ -57,4 +57,10 @@ describe('filter multiples', () => {
     const result = arr.filter(filterIsMultiple)
     expect(result).toEqual([3, 5])
   })
+
+  it('should filter multiples of 10', () => {
+    const arr = range(10)
+    const result = arr.filter(filterIsMultiple)
+    expect(result).toEqual([3, 5])
+  })
 })
