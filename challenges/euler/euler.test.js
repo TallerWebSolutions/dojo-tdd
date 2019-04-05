@@ -95,6 +95,6 @@ describe('filter multiples', () => {
 describe('Sum', () => {
   it('should return sum the elements of arr', () => {
     const arr = rangeBellow(10)
-    expect(sum(arr)).toEqual(23)
+    expect(sum(arr)).toEqual(20)
   })
 })
