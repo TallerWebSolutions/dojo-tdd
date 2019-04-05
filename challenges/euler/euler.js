@@ -9,5 +9,4 @@ export const isMultipleByThreeOrFive = n =>
   isMultipleThree(n) || isMultipleFive(n)
 
 export const sum = arr => arr.reduce((acc, cur) => acc + cur)
-
-// sum(filterMultiples(rangeBelow(1000)))
+export const resultExpectedEllerOne = sum(filterMultiples(rangeBelow(1000)))
