@@ -53,7 +53,7 @@ describe('range', () => {
   })
 })
 
-describe.only('rangeBelow', () => {
+describe('rangeBelow', () => {
   it('should return 3 elem array below 3', () => {
     const result = rangeBelow(3)
     expect(result).toEqual([1, 2])
@@ -79,13 +79,13 @@ describe('isMultiple by 3 or five', () => {
 })
 
 describe('filter multiples', () => {
-  it('should filter multiples of 3 or 5 from a range of 5', () => {
+  it('should filter multiples of 3 or 5 from a range below of 5', () => {
     const arr = range(5)
     const result = filterMultiples(arr)
     expect(result).toEqual([3, 5])
   })
 
-  it('should filter multiples of 9', () => {
+  it('should filter multiples of 3 or 5 from a range below 9 ', () => {
     const arr = range(9)
     const result = filterMultiples(arr)
     expect(result).toEqual([3, 5, 6, 9])
