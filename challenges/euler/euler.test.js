@@ -35,6 +35,12 @@ describe('euler `isMultiple` func', () => {
 })
 
 describe('range', () => {
-  const result = range(5)
-  expect(result).toEqual([1, 2, 3, 4, 5])
+  it('should return 3 elem array', () => {
+    const result = range(5)
+    expect(result).toEqual([1, 2, 3])
+  })
+  it('should return 5 elem array', () => {
+    const result = range(5)
+    expect(result).toEqual([1, 2, 3, 4, 5])
+  })
 })
