@@ -48,7 +48,7 @@ describe.only('range', () => {
   })
   it('should return 5 elem array', () => {
     const result = range(5)
-    expect(result).toEqual([0, 1, 2, 3, 4])
+    expect(result).toEqual([1, 2, 3, 4, 5])
   })
 })
 
