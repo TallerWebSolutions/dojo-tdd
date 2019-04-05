@@ -3,6 +3,7 @@ import {
   isMultipleFive,
   isMultiple,
   range,
+  rangeBelow,
   isMultipleByThreeOrFive,
   filterMultiples,
 } from './euler'
@@ -50,6 +51,17 @@ describe('range', () => {
     const result = range(5)
     expect(result).toEqual([1, 2, 3, 4, 5])
   })
+})
+
+describe.only('rangeBelow', () => {
+  it('should return 3 elem array below 3', () => {
+    const result = rangeBelow(3)
+    expect(result).toEqual([1, 2])
+  })
+  // it('should return 5 elem array', () => {
+  //   const result = range(5)
+  //   expect(result).toEqual([1, 2, 3, 4, 5])
+  // })
 })
 
 describe('isMultiple by 3 or five', () => {
