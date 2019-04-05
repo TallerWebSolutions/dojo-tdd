@@ -29,7 +29,7 @@ describe('euler', () => {
 
 describe('euler `isMultiple` func', () => {
   it('should detect if a number is multiple of 3', () => {
-    const result = isMultiple(9)(3)
+    const result = isMultiple(3)(9)
     expect(result).toBeTruthy()
   })
 })
