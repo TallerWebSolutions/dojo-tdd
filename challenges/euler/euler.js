@@ -9,5 +9,4 @@ export const isMultipleByThreeOrFive = n =>
   isMultipleThree(n) || isMultipleFive(n)
 
 export const sum = arr => arr.reduce((acc, cur) => acc + cur)
-export const resultExpectedEulerOne = num =>
-  sum(filterMultiples(rangeBelow(num)))
+export const resultExpectedEulerOne = num => sum(filterMultiples(range(num)))
