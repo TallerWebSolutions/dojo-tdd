@@ -4,6 +4,7 @@ import {
   isMultiple,
   range,
   filterIsMultiple,
+  isMultipleByThreeOrFive,
 } from './euler'
 
 describe('euler', () => {
@@ -53,15 +54,15 @@ describe('range', () => {
 
 describe.only('isMultiple by 3 or five', () => {
   it('should return true if the given number is multiple of 3 or 5', () => {
-    expect(1).toBeFalsy()
-    expect(2).toBeFalsy()
-    expect(3).toBeTruthy()
-    expect(4).toBeFalsy()
-    expect(5).toBeTruthy()
-    expect(6).toBeTruthy()
-    expect(7).toBeFalsy()
-    expect(8).toBeFalsy()
-    expect(9).toBeTruthy()
+    expect(isMultipleByThreeOrFive(1)).toBeFalsy()
+    expect(isMultipleByThreeOrFive(2)).toBeFalsy()
+    expect(isMultipleByThreeOrFive(3)).toBeTruthy()
+    expect(isMultipleByThreeOrFive(4)).toBeFalsy()
+    expect(isMultipleByThreeOrFive(5)).toBeTruthy()
+    expect(isMultipleByThreeOrFive(6)).toBeTruthy()
+    expect(isMultipleByThreeOrFive(7)).toBeFalsy()
+    expect(isMultipleByThreeOrFive(8)).toBeFalsy()
+    expect(isMultipleByThreeOrFive(9)).toBeTruthy()
   })
 })
 
