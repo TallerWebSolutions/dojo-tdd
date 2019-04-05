@@ -7,6 +7,7 @@ import {
   isMultipleByThreeOrFive,
   filterMultiples,
   sum,
+  resultExpectedEulerOne,
 } from './euler'
 
 describe('euler', () => {
@@ -98,6 +99,6 @@ describe.only('Sum', () => {
     expect(sum([1, 2])).toEqual(3)
   })
   it('should return `233168` of arr(1000)', () => {
-    expect(sum(filterMultiples(rangeBelow(1000)))).toEqual(233168)
+    expect(resultExpectedEulerOne(1000)).toEqual(233168)
   })
 })
