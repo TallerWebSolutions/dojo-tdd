@@ -22,7 +22,7 @@ describe('euler', () => {
     expect(result).toBeTruthy()
   })
   it('should detect if 999 is multiple of 5', () => {
-    const result = isMultipleFive(999)
+    const result = isMultiple(999)
     expect(result).toBeFalsy()
   })
 })
