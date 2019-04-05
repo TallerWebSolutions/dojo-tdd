@@ -6,6 +6,7 @@ import {
   rangeBelow,
   isMultipleByThreeOrFive,
   filterMultiples,
+  sum,
 } from './euler'
 
 describe('euler', () => {

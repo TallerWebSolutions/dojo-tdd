@@ -7,3 +7,5 @@ export const filterMultiples = a => a.filter(isMultipleByThreeOrFive)
 
 export const isMultipleByThreeOrFive = n =>
   isMultipleThree(n) || isMultipleFive(n)
+
+export const sum = (arr = arr.reduce((acc, cur) => acc + cur))
