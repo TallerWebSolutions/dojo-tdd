@@ -43,11 +43,11 @@ describe('euler `isMultiple` func', () => {
 describe('range', () => {
   it('should return 3 elem array', () => {
     const result = range(3)
-    expect(result).toEqual([1, 2, 3])
+    expect(result).toEqual([0, 1, 2])
   })
   it('should return 5 elem array', () => {
     const result = range(5)
-    expect(result).toEqual([1, 2, 3, 4, 5])
+    expect(result).toEqual([0, 1, 2, 3, 4])
   })
 })
 
@@ -59,8 +59,8 @@ describe('filter multiples', () => {
   })
 
   it('should filter multiples of 10', () => {
-    const arr = range(10)
+    const arr = range(9)
     const result = arr.filter(filterIsMultiple)
-    expect(result).toEqual([3, 5])
+    expect(result).toEqual([3, 5, 6, 9, 10])
   })
 })
