@@ -5,7 +5,7 @@ import {
   range,
   filterIsMultiple,
   isMultipleByThreeOrFive,
-  filTerMultiples,
+  filterMultiples,
 } from './euler'
 
 describe('euler', () => {
@@ -70,7 +70,7 @@ describe('isMultiple by 3 or five', () => {
 describe.only('filter multiples', () => {
   it('should filter multiples of 3 or 5', () => {
     const arr = range(5)
-    const result = filTerMultiples(arr)
+    const result = filterMultiples(arr)
     expect(result).toEqual([3])
   })
 
