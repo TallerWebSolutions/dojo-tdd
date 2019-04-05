@@ -97,4 +97,12 @@ describe.only('Sum', () => {
   it('should return sum the elements of arr', () => {
     expect(sum([1, 2])).toEqual(3)
   })
+
+  it('should return sum the elements of arr', () => {
+    expect(sum([1, 2])).toEqual(3)
+  })
+
+  it('should return sum the elements of arr', () => {
+    expect(sum([1, 2])).toEqual(3)
+  })
 })
