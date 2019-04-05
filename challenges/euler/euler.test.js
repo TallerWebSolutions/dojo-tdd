@@ -1,4 +1,4 @@
-import { isMultipleThree } from './euler'
+import { isMultipleThree, isMultipleFive } from './euler'
 
 describe('euler', () => {
   it('should detect if 2 is multiple of 3', () => {
@@ -16,5 +16,9 @@ describe('euler', () => {
   it('should detect if 952 is multiple of 3', () => {
     const result = isMultipleThree(952)
     expect(result).toBeFalsy()
+  })
+  it('should detect if 950 is multiple of 5', () => {
+    const result = isMultipleFive(950)
+    expect(result).toBeTruthy()
   })
 })
