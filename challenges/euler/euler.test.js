@@ -1,4 +1,4 @@
-import { isMultipleThree, isMultipleFive, isMultiple } from './euler'
+import { isMultipleThree, isMultipleFive, isMultiple, range } from './euler'
 
 describe('euler', () => {
   it('should detect if 2 is multiple of 3', () => {
