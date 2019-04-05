@@ -33,3 +33,8 @@ describe('euler `isMultiple` func', () => {
     expect(result).toBeTruthy()
   })
 })
+
+describe('range', () => {
+  const result = range(5)
+  expect(result).toEqual([1, 2, 3, 4, 5])
+})
