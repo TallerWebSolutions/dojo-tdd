@@ -1,4 +1,10 @@
-import { isMultipleThree, isMultipleFive, isMultiple, range } from './euler'
+import {
+  isMultipleThree,
+  isMultipleFive,
+  isMultiple,
+  range,
+  filterIsMultiple,
+} from './euler'
 
 describe('euler', () => {
   it('should detect if 2 is multiple of 3', () => {
@@ -42,5 +48,13 @@ describe('range', () => {
   it('should return 5 elem array', () => {
     const result = range(5)
     expect(result).toEqual([1, 2, 3, 4, 5])
+  })
+})
+
+describe('filter multiples', () => {
+  it('should filter multiples of 3 or 5', () => {
+    const arr = range(5)
+    const result = arr.filter(filterIsMultiple)
+    expect(result).toEqual([3, 5])
   })
 })
