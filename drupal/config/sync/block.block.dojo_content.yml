@@ -1,0 +1,22 @@
+uuid: 40681a3d-501e-4695-89e9-def42fff3243
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dojo
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: dojo_content
+theme: dojo
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

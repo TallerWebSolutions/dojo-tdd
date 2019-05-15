@@ -1,0 +1,22 @@
+uuid: fb025c5b-c41a-42fd-97bb-1bb26c4f6ccb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dojo
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: dojo_powered
+theme: dojo
+region: sidebar_first
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

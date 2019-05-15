@@ -1,0 +1,8 @@
+uuid: de056077-1518-464a-a10d-87fae3f249b3
+langcode: en
+status: true
+dependencies: {  }
+id: titled_image_block
+label: 'Titled image block'
+revision: 0
+description: ''

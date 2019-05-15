@@ -1,0 +1,22 @@
+uuid: 27c41f0f-0b65-4257-8a59-30e6053faa48
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dojo
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: dojo_local_tasks
+theme: dojo
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

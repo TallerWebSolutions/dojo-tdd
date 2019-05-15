@@ -1,0 +1,22 @@
+uuid: 91228a67-9793-4c87-b392-c541fcfed7fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dojo
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: dojo_breadcrumbs
+theme: dojo
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

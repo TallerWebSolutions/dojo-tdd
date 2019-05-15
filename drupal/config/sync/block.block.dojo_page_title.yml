@@ -1,0 +1,20 @@
+uuid: cf3110c1-b0cc-479f-a6a8-df0f7a1be86f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dojo
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: dojo_page_title
+theme: dojo
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

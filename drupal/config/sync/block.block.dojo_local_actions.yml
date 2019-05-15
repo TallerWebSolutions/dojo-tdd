@@ -1,0 +1,20 @@
+uuid: 7a6547a9-67f0-4f43-a1cd-b58fc4e14bbd
+langcode: en
+status: true
+dependencies:
+  theme:
+    - dojo
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: dojo_local_actions
+theme: dojo
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }
