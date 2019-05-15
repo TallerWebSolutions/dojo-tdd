@@ -1,0 +1,8 @@
+dojo_layout:
+  label: "grid"
+  template: templates/section
+  regions:
+    header:
+      label: "header block text"
+    main:
+      label: "block text"
