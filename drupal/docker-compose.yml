@@ -12,7 +12,7 @@ services:
   app:
     extends:
       service: meta
-    image: APP_IMAGE_NAME
+    image: dojo_drupal
     build:
       context: ./docker/
       args:
@@ -35,7 +35,7 @@ services:
     extends:
       service: meta
     image: mysql:5.6
-    container_name: DB_CONTAINER_NAME
+    container_name: dojo_drupal_container
     volumes:
       - mysql:/var/lib/mysql
 

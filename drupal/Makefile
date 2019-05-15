@@ -21,7 +21,7 @@ stop:
 
 clean:
 	docker-compose down
-	docker rmi APP_IMAGE_NAME
+	docker rmi dojo_drupal
 
 build:
 	docker-compose build app
