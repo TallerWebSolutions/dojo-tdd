@@ -1,0 +1,5 @@
+name: Dojo Product
+type: module
+description: Custom product module
+core: 8.x
+package: Custom
