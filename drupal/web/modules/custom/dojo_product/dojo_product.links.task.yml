@@ -1,0 +1,9 @@
+entity.product.canonical:
+  route_name: entity.product.canonical
+  base_route: entity.product.canonical
+  title: 'View'
+
+entity.product.edit_form:
+  route_name: entity.product.edit_form
+  base_route: entity.product.canonical
+  title: 'Edit'

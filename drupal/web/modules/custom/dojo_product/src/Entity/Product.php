@@ -20,6 +20,9 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  *     "uuid" = "uuid"
  *   },
  *   handlers = {
+ *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "list_builder" = "Drupal\dojo_product\ProductListBuilder",
+ *     "views_data" = "Drupal\views\EntityViewsData",
  *     "form" = {
  *       "default" = "Drupal\dojo_product\Form\ProductForm",
  *       "add" = "Drupal\dojo_product\Form\ProductForm",
@@ -27,7 +30,9 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  *     }
  *   },
  *   links = {
- *     "add-form" = "/admin/structure/product/add"
+ *     "canonical" = "/admin/structure/product/{product}",
+ *     "add-form" = "/admin/structure/product/add",
+ *     "edit-form" = "/admin/structure/product/{product}/edit"
  *   }
  * )
  * 

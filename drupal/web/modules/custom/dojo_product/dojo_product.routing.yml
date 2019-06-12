@@ -7,3 +7,33 @@ dojo_product.product_add:
   requirements:
     # _entity_create_access: 'product'
     _permission: 'administer content types'
+
+entity.product.edit_form:
+  path: '/admin/structure/product/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the contact entity.
+    _entity_form: product.edit
+    _title: 'Edit Product'
+  requirements:
+    # _entity_create_access: 'product'
+    _permission: 'administer content types'
+
+entity.product.canonical:
+  path: '/admin/structure/product/{product}'
+  defaults:
+  # Calls the form controller, defined in the contact entity.
+    _entity_view: product
+    _title: 'View Product'
+  requirements:
+    # _entity_create_access: 'product'
+    _permission: 'administer content types'
+
+entity.product.collection:
+  path: '/admin/structure/product/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the contact entity.
+    _entity_list: 'product'
+    _title: 'Product List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer content types'
