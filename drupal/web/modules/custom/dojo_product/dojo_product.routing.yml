@@ -9,11 +9,21 @@ dojo_product.product_add:
     _permission: 'administer content types'
 
 entity.product.edit_form:
-  path: '/admin/structure/product/edit'
+  path: '/admin/structure/product/{product}/edit'
   defaults:
   # Calls the form.edit controller, defined in the contact entity.
     _entity_form: product.edit
     _title: 'Edit Product'
+  requirements:
+    # _entity_create_access: 'product'
+    _permission: 'administer content types'
+
+entity.product.delete_form:
+  path: '/admin/structure/product/{product}/delete'
+  defaults:
+  # Calls the form.delete controller, defined in the contact entity.
+    _entity_form: product.delete
+    _title: 'Delete Product'
   requirements:
     # _entity_create_access: 'product'
     _permission: 'administer content types'
