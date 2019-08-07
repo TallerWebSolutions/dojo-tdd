@@ -9,7 +9,7 @@ export const mergeByInset = (
   listB: Array<number>,
   inset: number
 ): Array<string | number> => {
-  /* let newArray: Array<string | number> = [];
+  let newArray: Array<string | number> = [];
 
   listA.forEach((item, index) => {
     newArray.push(item);
@@ -19,7 +19,7 @@ export const mergeByInset = (
     }
   });
 
-  return newArray; */
+  return newArray;
 
-  return listA.reduce<Array<string | number>>((acc, item, index) => {}, []);
+  //return listA.reduce<Array<string | number>>((acc, item, index) => {}, []);
 };
