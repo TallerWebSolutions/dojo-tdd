@@ -1,10 +1,19 @@
 import { Product, Cart, Receipt } from "./index";
 
 describe("Supermarket Checkout ", () => {
-  it("Should create a product with price and name", () => {
-    const apple = new Product("apple", 1.2);
-    expect(apple.getPrice()).toEqual(1.2);
-    expect(apple.getName()).toEqual("apple");
+  describe("Product", () => {
+    it("Should create a product with price and name", () => {
+      const apple = new Product("apple", 1.2);
+      expect(apple.getPrice()).toEqual(1.2);
+      expect(apple.getName()).toEqual("apple");
+    });
+
+    it("Should format price to a fixed string value.", () => {
+      const banana = new Product("banana", 2.0);
+      const pera = new Product("pera", 3);
+      expect(banana.getFormattedPrice()).toEqual("R$2,00");
+      expect(pera.getFormattedPrice()).toEqual("R$3,00");
+    });
   });
 
   describe("Cart", () => {
@@ -83,7 +92,7 @@ describe("Supermarket Checkout ", () => {
     });
   });
 
-  describe.only("Receipt", () => {
+  describe("Receipt", () => {
     it("should return human readable list of products", () => {
       const cart = new Cart();
       const rice = new Product("rice", 9.9);
@@ -91,7 +100,7 @@ describe("Supermarket Checkout ", () => {
       cart.add([rice]);
       const receipt = new Receipt(cart);
 
-      const expected = "rice - 1 - R$9.9";
+      const expected = "rice - 1 - R$9,90";
       expect(receipt.getProductsList()).toEqual(expected);
     });
 
@@ -103,7 +112,7 @@ describe("Supermarket Checkout ", () => {
       cart.add([rice, apple]);
       const receipt = new Receipt(cart);
 
-      const expected = "rice - 1 - R$9.9\n apple - 1 - R$2.9";
+      const expected = "rice - 1 - R$9,90\napple - 1 - R$2,90";
       expect(receipt.getProductsList()).toEqual(expected);
     });
 
@@ -114,9 +123,45 @@ describe("Supermarket Checkout ", () => {
       cart.add([banana]);
 
       const receipt = new Receipt(cart);
-      const expected = "banana - 1 - R$2.0";
+      const expected = "banana - 1 - R$2,00";
 
       expect(receipt.getProductsList()).toEqual(expected);
     });
+  });
+
+  describe("Deals", () => {
+    it("Buy Two get one for free", () => {
+      const cart = new Cart();
+      const sunGlasses = new Product("sunGlasses", 50);
+      cart.add([sunGlasses, sunGlasses, sunGlasses]);
+
+      const discount = new Product("sunGlasses-discount", -50);
+
+      // @TODO create an abstraction to deal with more than one kind of discount.
+      const applyDiscount = (cart: Cart) => {
+        const shouldApply = cart
+          .getProductsWithAmount()
+          .some(({ product, amount }) => {
+            return product.getName() === "sunGlasses" && amount >= 2;
+          });
+
+        if (!shouldApply) return cart;
+
+        // Apply discount.
+        cart.add([discount]);
+        return cart;
+      };
+
+      // receber um carrinho => ver quantos produtos iguais => precisa aplicar desconto?
+
+      // @TODO descount deve receber um array de deals
+      const discounts = applyDiscount(cart)
+        .getProducts()
+        .filter(product => product.getName() === "sunGlasses-discount");
+
+      expect(discounts).toHaveLength(1);
+    });
+
+    // @TODO Create a test with a different kind of discount.
   });
 });

@@ -11,12 +11,16 @@ export class Product {
     return this.price;
   };
 
+  getFormattedPrice = () => {
+    return `R$${this.price.toFixed(2).replace(".", ",")}`;
+  };
+
   getName = () => {
     return this.name;
   };
 }
 
-type ProductWithAmount = {
+export type ProductWithAmount = {
   product: Product;
   amount: number;
 };
@@ -96,11 +100,12 @@ export class Receipt {
 
   getProductsList = () => {
     const products = this.cart.getProductsWithAmount();
-
     return products.reduce(
-      (acc: string, productWithAmount: ProductWithAmount) => {
+      (acc: string, productWithAmount: ProductWithAmount, index: number) => {
+        const newLine = index !== products.length - 1 ? "\n" : "";
+
         const { product, amount } = productWithAmount;
-        return (acc += `${product.getName()} - ${amount} - R$${product.getPrice()}\n`);
+        return (acc += `${product.getName()} - ${amount} - ${product.getFormattedPrice()}${newLine}`);
       },
       ""
     );
