@@ -1,4 +1,4 @@
-import { Product, Cart } from "./index";
+import { Product, Cart, Receipt } from "./index";
 
 describe("Supermarket Checkout ", () => {
   it("Should create a product with price and name", () => {
@@ -25,18 +25,6 @@ describe("Supermarket Checkout ", () => {
 
       expect(cart.getFinalPrice()).toEqual(10.6);
     });
-  });
-
-  describe("Receipt", () => {
-    it("should return list of protucts", () => {
-      const cart = new Cart();
-      const rice = new Product("rice", 9.9);
-
-      cart.add([rice]);
-
-      const expected = "rice - 1 - R$9.9\n total = R$9.9";
-      expect(cart.getReceipt()).toEqual(expected);
-    });
 
     it("should return list of protucts", () => {
       const cart = new Cart();
@@ -49,7 +37,7 @@ describe("Supermarket Checkout ", () => {
       expect(cart.getReceipt()).toEqual(expected);
     });
 
-    it("should aggragate products", () => {
+    it("should aggregate products", () => {
       const cart = new Cart();
       const rice = new Product("rice", 9.9);
       const halls = new Product("halls", 3);
@@ -58,6 +46,77 @@ describe("Supermarket Checkout ", () => {
       const expected = [[rice, rice], [halls]];
 
       expect(cart.getAggregated()).toEqual(expected);
+    });
+
+    describe("products with amount", () => {
+      it("should get products with mount", () => {
+        const cart = new Cart();
+        const rice = new Product("rice", 9.9);
+        const halls = new Product("halls", 3);
+
+        cart.add([rice, rice, rice, halls, halls]);
+        const expected = [
+          { product: rice, amount: 3 },
+          { product: halls, amount: 2 }
+        ];
+
+        expect(JSON.stringify(cart.getProductsWithAmount())).toEqual(
+          JSON.stringify(expected)
+        );
+      });
+
+      it("should count products", () => {
+        const cart = new Cart();
+        const rice = new Product("rice", 9.9);
+        const halls = new Product("halls", 3);
+
+        cart.add([rice, rice, rice, halls, halls, halls]);
+        const expected = [
+          { product: rice, amount: 3 },
+          { product: halls, amount: 3 }
+        ];
+
+        expect(JSON.stringify(cart.getProductsWithAmount())).toEqual(
+          JSON.stringify(expected)
+        );
+      });
+    });
+  });
+
+  describe.only("Receipt", () => {
+    it("should return human readable list of products", () => {
+      const cart = new Cart();
+      const rice = new Product("rice", 9.9);
+
+      cart.add([rice]);
+      const receipt = new Receipt(cart);
+
+      const expected = "rice - 1 - R$9.9";
+      expect(receipt.getProductsList()).toEqual(expected);
+    });
+
+    it("should return human readable list of products", () => {
+      const cart = new Cart();
+      const rice = new Product("rice", 9.9);
+      const apple = new Product("apple", 2.9);
+
+      cart.add([rice, apple]);
+      const receipt = new Receipt(cart);
+
+      const expected = "rice - 1 - R$9.9\n apple - 1 - R$2.9";
+      expect(receipt.getProductsList()).toEqual(expected);
+    });
+
+    it("should return a cart item", () => {
+      const cart = new Cart();
+      const banana = new Product("banana", 2.0);
+
+      cart.add([banana]);
+
+      const receipt = new Receipt(cart);
+      const expected = "banana - 1 - R$2.0";
+
+      expect(receipt.getProductsList()).toEqual(expected);
     });
   });
 });

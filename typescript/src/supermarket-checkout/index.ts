@@ -16,6 +16,11 @@ export class Product {
   };
 }
 
+type ProductWithAmount = {
+  product: Product;
+  amount: number;
+};
+
 export class Cart {
   private products: Product[] = [];
 
@@ -39,11 +44,6 @@ export class Cart {
       product: productList[0],
       amount: productList.length
     }));
-
-    type ProductWithAmount = {
-      product: Product;
-      amount: number;
-    };
 
     const items = products.reduce((acc, product: ProductWithAmount) => {
       return (
@@ -74,6 +74,35 @@ export class Cart {
         return acc.concat([[current]]);
       },
       []
+    );
+  };
+
+  getProductsWithAmount = (): ProductWithAmount[] => {
+    const aggregatedProducts = this.getAggregated();
+
+    return aggregatedProducts.map(aggregatedProduct => ({
+      product: aggregatedProduct[0],
+      amount: aggregatedProduct.length
+    }));
+  };
+}
+
+export class Receipt {
+  private cart: Cart;
+
+  constructor(cart: Cart) {
+    this.cart = cart;
+  }
+
+  getProductsList = () => {
+    const products = this.cart.getProductsWithAmount();
+
+    return products.reduce(
+      (acc: string, productWithAmount: ProductWithAmount) => {
+        const { product, amount } = productWithAmount;
+        return (acc += `${product.getName()} - ${amount} - R$${product.getPrice()}\n`);
+      },
+      ""
     );
   };
 }
