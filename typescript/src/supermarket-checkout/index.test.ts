@@ -162,6 +162,49 @@ describe("Supermarket Checkout ", () => {
       expect(discounts).toHaveLength(1);
     });
 
+    it("should apply discount", () => {
+      const cart = new Cart();
+      const rice = new Product("rice", 10);
+      cart.add([rice]);
+      expect(cart.getFinalPrice()).toEqual(9);
+    });
+
+    it("Buy Five get two for free", () => {
+      const cart = new Cart();
+      const sunGlasses = new Product("sunGlasses", 50);
+      cart.add([sunGlasses, sunGlasses, sunGlasses, sunGlasses, sunGlasses]);
+
+      const expected = [
+        {
+          product: sunGlasses,
+          discount: 80
+        }
+      ];
+
+      expect(cart.getProductsWithDiscount()).toEqual(expected);
+    });
+
+    it("Get 10% discount on rice", () => {
+      const cart = new Cart();
+      const rice = new Product("Rice", 10);
+      cart.add([rice, rice, rice]);
+
+      const expected = [
+        {
+          product: rice,
+          discount: 80
+        }
+      ];
+
+      expect(cart.getProductsWithDiscount()).toEqual(expected);
+    });
+
     // @TODO Create a test with a different kind of discount.
   });
 });
+
+// 1=> novo carrinho
+// 2=> cria produto
+// 3=> add no produto no carrinho
+// 4=> forma o carrinho com todos produtos
+// 5=> emite um recibo de tudo

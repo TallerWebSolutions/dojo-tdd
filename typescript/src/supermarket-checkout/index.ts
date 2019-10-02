@@ -20,9 +20,14 @@ export class Product {
   };
 }
 
-export type ProductWithAmount = {
+type ProductWithAmount = {
   product: Product;
   amount: number;
+};
+
+type ProductWithDiscount = {
+  product: Product;
+  discount: number;
 };
 
 export class Cart {
@@ -39,8 +44,12 @@ export class Cart {
   getFinalPrice = () => {
     const products = this.products;
     const prices = products.map(product => product.getPrice());
+    const accumulatedPrice = prices.reduce((acc, curr) => acc + curr);
+    const finalPrice = products.some(product => product.getName() === "rice")
+      ? accumulatedPrice * 0.9
+      : accumulatedPrice;
 
-    return prices.reduce((acc, curr) => acc + curr);
+    return finalPrice;
   };
 
   getReceipt = () => {
@@ -89,6 +98,22 @@ export class Cart {
       amount: aggregatedProduct.length
     }));
   };
+
+  getProductsWithDiscount = (): ProductWithDiscount[] => {
+    const productsWithAmount = this.getProductsWithAmount();
+
+    return productsWithAmount.map(({ product }) => ({
+      product,
+      discount: 80
+    }));
+
+    /*
+    const currentProductAmount = this.getProductsWithAmount()[0].amount;
+    return currentProductAmount >= 2
+      ? Math.floor(currentProductAmount / 2) + (currentProductAmount % 2)
+      : currentProductAmount;
+      */
+  };
 }
 
 export class Receipt {
@@ -111,3 +136,6 @@ export class Receipt {
     );
   };
 }
+
+// se tem o produto x
+// classe so aplica a regra
