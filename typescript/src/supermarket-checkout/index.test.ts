@@ -25,14 +25,52 @@ describe("Supermarket Checkout ", () => {
       expect(cart.getProducts()).toEqual([apple, banana]);
     });
 
-    it("should sum products values", () => {
+    it("should calculate final price", () => {
       const cart = new Cart();
-      const rice = new Product("rice", 9.9);
-      const halls = new Product("halls", 0.7);
+      const beer = new Product("beer", 10);
+      cart.add([beer]);
+      expect(cart.getFinalPrice()).toEqual(10);
+    });
+
+    it("should calculate rice deal", () => {
+      const cart = new Cart();
+      const rice = new Product("rice", 1);
+      const halls = new Product("halls", 1);
 
       cart.add([rice, halls]);
 
-      expect(cart.getFinalPrice()).toEqual(10.6);
+      expect(cart.getFinalPrice()).toEqual(1.9);
+    });
+
+    it("should calculate toothbrush deal", () => {
+      const cart = new Cart();
+      const toothbrush = new Product("toothbrush", 2);
+      const halls = new Product("halls", 0.7);
+
+      cart.add([toothbrush, toothbrush, halls]);
+
+      expect(cart.getFinalPrice()).toEqual(2.7);
+
+      cart.add([toothbrush]);
+
+      expect(cart.getFinalPrice()).toEqual(4.7);
+    });
+
+    it("should buy two get one for free", () => {
+      const cart = new Cart();
+      const toothbrush = new Product("toothbrush", 2);
+      const sunglasses = new Product("sunglasses", 2);
+
+      cart.add([
+        toothbrush,
+        toothbrush,
+        toothbrush,
+        sunglasses,
+        sunglasses,
+        sunglasses
+      ]);
+
+      expect(cart.getFinalPrice()).toEqual(10);
     });
 
     it("should return list of protucts", () => {
@@ -42,7 +80,7 @@ describe("Supermarket Checkout ", () => {
 
       cart.add([rice, rice, halls]);
 
-      const expected = "rice - 2 - R$9.9\nhalls - 1 - R$3\n total = R$22.8";
+      const expected = "rice - 2 - R$9.9\nhalls - 1 - R$3\n total = R$20.52";
       expect(cart.getReceipt()).toEqual(expected);
     });
 
@@ -58,7 +96,7 @@ describe("Supermarket Checkout ", () => {
     });
 
     describe("products with amount", () => {
-      it("should get products with mount", () => {
+      it("should get products with amount", () => {
         const cart = new Cart();
         const rice = new Product("rice", 9.9);
         const halls = new Product("halls", 3);
@@ -198,13 +236,12 @@ describe("Supermarket Checkout ", () => {
 
       expect(cart.getProductsWithDiscount()).toEqual(expected);
     });
+  });
 
-    // @TODO Create a test with a different kind of discount.
+  describe("Deal system", () => {
+    it("Should create a discount with name", () => {
+      const deal = new Deal("crazy manager");
+      expect(deal.getName()).toEqual("crazy manager");
+    });
   });
 });
-
-// 1=> novo carrinho
-// 2=> cria produto
-// 3=> add no produto no carrinho
-// 4=> forma o carrinho com todos produtos
-// 5=> emite um recibo de tudo

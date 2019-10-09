@@ -1,22 +1,28 @@
 export class Product {
   private price: number;
   private name: string;
+  private deal: string | undefined;
 
-  constructor(name: string, price: number) {
+  constructor(name: string, price: number, deal?: string) {
     this.price = price;
     this.name = name;
+    this.deal = deal;
   }
 
   getPrice = () => {
     return this.price;
   };
 
+  getName = () => {
+    return this.name;
+  };
+
   getFormattedPrice = () => {
     return `R$${this.price.toFixed(2).replace(".", ",")}`;
   };
 
-  getName = () => {
-    return this.name;
+  getDeal = () => {
+    return this.deal;
   };
 }
 
@@ -41,15 +47,28 @@ export class Cart {
 
   getProducts = () => this.products;
 
-  getFinalPrice = () => {
-    const products = this.products;
-    const prices = products.map(product => product.getPrice());
-    const accumulatedPrice = prices.reduce((acc, curr) => acc + curr);
-    const finalPrice = products.some(product => product.getName() === "rice")
-      ? accumulatedPrice * 0.9
-      : accumulatedPrice;
+  deal = {
+    rice: {
+      rule: () => {}
+    },
+    toothbrush: {}
+  };
 
-    return finalPrice;
+  getFinalPrice = () => {
+    const products = this.getProductsWithAmount();
+    const prices = products.map(({ product, amount }) => {
+      const price =
+        product.getName() === "rice"
+          ? product.getPrice() * 0.9
+          : product.getPrice();
+
+      const quantity =
+        product.getName() === "toothbrush" ? Math.ceil(amount / 2) : amount;
+
+      return price * quantity;
+    });
+
+    return prices.reduce((acc, curr) => acc + curr);
   };
 
   getReceipt = () => {
