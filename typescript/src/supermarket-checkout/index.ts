@@ -57,15 +57,26 @@ export class Cart {
   getFinalPrice = () => {
     const products = this.getProductsWithAmount();
     const prices = products.map(({ product, amount }) => {
-      const price =
-        product.getName() === "rice"
-          ? product.getPrice() * 0.9
-          : product.getPrice();
+      const price: number = product.getPrice();
+      const deal: string | undefined = product.getDeal();
+      let discount: number;
+      switch (deal) {
+        case "ten_percent":
+          discount = product.getPrice() * 0.1;
+          break;
+        case "buy_two_get_one":
+          discount = Math.floor(amount / 2) * product.getPrice();
+          break;
+        case "buy_four_get_one":
+          discount = Math.floor(amount / 4) * product.getPrice();
+          break;
+        default:
+          discount = 0;
+      }
 
-      const quantity =
-        product.getName() === "toothbrush" ? Math.ceil(amount / 2) : amount;
+      console.log(amount);
 
-      return price * quantity;
+      return price * amount - discount;
     });
 
     return prices.reduce((acc, curr) => acc + curr);
@@ -156,5 +167,25 @@ export class Receipt {
   };
 }
 
-// se tem o produto x
-// classe so aplica a regra
+export class Deal {
+  private discount: (a: number, b: number) => void;
+  private amount: number;
+  private name: string;
+  private priceProductCategory: number;
+
+  constructor(
+    discount: (a: number, b: number) => void,
+    amount: number,
+    name: string,
+    priceProductCategory: number
+  ) {
+    this.discount = discount;
+    this.amount = amount;
+    this.name = name;
+    this.priceProductCategory = priceProductCategory;
+  }
+
+  getName = () => this.name;
+
+  getDiscount = () => this.discount(this.priceProductCategory, this.amount);
+}

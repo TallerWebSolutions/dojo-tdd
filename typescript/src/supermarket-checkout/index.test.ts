@@ -1,4 +1,4 @@
-import { Product, Cart, Receipt } from "./index";
+import { Product, Cart, Receipt, Deal } from "./index";
 
 describe("Supermarket Checkout ", () => {
   describe("Product", () => {
@@ -34,7 +34,7 @@ describe("Supermarket Checkout ", () => {
 
     it("should calculate rice deal", () => {
       const cart = new Cart();
-      const rice = new Product("rice", 1);
+      const rice = new Product("rice", 1, "ten_percent");
       const halls = new Product("halls", 1);
 
       cart.add([rice, halls]);
@@ -44,7 +44,7 @@ describe("Supermarket Checkout ", () => {
 
     it("should calculate toothbrush deal", () => {
       const cart = new Cart();
-      const toothbrush = new Product("toothbrush", 2);
+      const toothbrush = new Product("toothbrush", 2, "buy_two_get_one");
       const halls = new Product("halls", 0.7);
 
       cart.add([toothbrush, toothbrush, halls]);
@@ -54,6 +54,24 @@ describe("Supermarket Checkout ", () => {
       cart.add([toothbrush]);
 
       expect(cart.getFinalPrice()).toEqual(4.7);
+    });
+
+    it.only("should buy four get one for free", () => {
+      const cart = new Cart();
+      const toothbrush = new Product("toothbrush", 2, "buy_four_get_one");
+      const halls = new Product("halls", 0.7);
+
+      cart.add([toothbrush, toothbrush, toothbrush, toothbrush, halls]);
+
+      expect(cart.getFinalPrice()).toEqual(6.7);
+
+      cart.add([toothbrush]);
+
+      expect(cart.getFinalPrice()).toEqual(8.7);
+
+      cart.add([toothbrush]);
+
+      expect(cart.getFinalPrice()).toEqual(10.7);
     });
 
     it("should buy two get one for free", () => {
@@ -75,13 +93,26 @@ describe("Supermarket Checkout ", () => {
 
     it("should return list of protucts", () => {
       const cart = new Cart();
-      const rice = new Product("rice", 9.9);
-      const halls = new Product("halls", 3);
+      const deodorant = new Product("deodorant", 2);
 
-      cart.add([rice, rice, halls]);
+      cart.add([deodorant, deodorant]);
 
-      const expected = "rice - 2 - R$9.9\nhalls - 1 - R$3\n total = R$20.52";
+      const expected = "deodorant - 2 - R$2\n total = R$4";
       expect(cart.getReceipt()).toEqual(expected);
+    });
+
+    it("Should calculate the deal per product category", () => {
+      const rice = new Product("rice", 10, "dez_por_cento");
+      const cart = new Cart();
+      cart.add([rice]);
+      expect(cart.getFinalPrice()).toEqual(9);
+    });
+
+    it("Should handle carts with no deals", () => {
+      const rice = new Product("rice", 10);
+      const cart = new Cart();
+      cart.add([rice, rice, rice]);
+      expect(cart.getFinalPrice()).toEqual(30);
     });
 
     it("should aggregate products", () => {
@@ -202,7 +233,7 @@ describe("Supermarket Checkout ", () => {
 
     it("should apply discount", () => {
       const cart = new Cart();
-      const rice = new Product("rice", 10);
+      const rice = new Product("rice", 10, "dez_por_cento");
       cart.add([rice]);
       expect(cart.getFinalPrice()).toEqual(9);
     });
@@ -238,10 +269,39 @@ describe("Supermarket Checkout ", () => {
     });
   });
 
-  describe("Deal system", () => {
-    it("Should create a discount with name", () => {
-      const deal = new Deal("crazy manager");
-      expect(deal.getName()).toEqual("crazy manager");
+  describe.skip("Deal system", () => {
+    it("should get Deal discount", () => {
+      const fn = (price: number, amount: number) => {
+        if (amount > 2) return price * 0.9;
+        return price;
+      };
+
+      const deal = new Deal(fn, 3, "rice", 10);
+
+      expect(deal.getDiscount()).toEqual(9);
+    });
+
+    it.skip("should calculate the discount of a product", () => {
+      const cart = new Cart();
+      const banana = new Product("banana", 2.0);
+
+      cart.add([banana]);
+
+      // const receipt = new Receipt(cart);
+      // const deal = new Deal(fn, 3, "banana", 10);
+      // const deal = new Deal(3, () => {
+      //   return 1.8;
+      // });
+
+      expect(cart.getFinalPrice()).toEqual(1.8);
+
+      /*
+      const dealProduct = receipt.applyDeal(
+        new Deal(amount => {
+          return (amount * 10) / 100;
+        }, "rice")
+      );
+      */
     });
   });
 });
