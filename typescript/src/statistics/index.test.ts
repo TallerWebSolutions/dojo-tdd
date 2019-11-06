@@ -1,4 +1,4 @@
-import { minimum, sort, maximum, length, mean, median, isEven, mode } from "./";
+import { minimum, sort, maximum, length, mean, median, isEven, mode, group } from "./";
 
 describe('sort', () => {
   it('shoul sort a numeric list from lower to higher', () => {
@@ -56,6 +56,14 @@ describe('Statistical methods for calculation', () => {
   it('should calculate the mode', () => {
     const dataset = [1, 1, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 5, 6, 8]
     expect(mode(dataset)).toEqual(3);
+
+    const anotherSet = [1, 1, 1, 2]
+    expect(mode(anotherSet)).toEqual(1);
+  })
+
+  it('should calculate the mode', () => {
+    const dataset = [1, 1, 1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 5, 6, 8]
+    expect(mode(dataset)).toEqual(3);
   })
 
 })
@@ -64,5 +72,10 @@ describe('helpers', () => {
   it('should return if is even or odd', () => {
     expect(isEven(2)).toBeTruthy()
     expect(isEven(3)).toBeFalsy()
+  })
+
+  it('should group similar items of a list', () => {
+    expect(group([1, 2, 3, 4, 4])).toEqual([[1], [2], [3], [4, 4]])
+    expect(group([1, 2, 2])).toEqual([[1], [2, 2]])
   })
 })
