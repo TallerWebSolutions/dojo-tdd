@@ -34,4 +34,39 @@ export const median = (values: number[]): number => {
 
 export const isEven = (value: number): boolean => value % 2 === 0
 
-export const mode = (values: number[]): number => 0
+export const mode = (values: number[]): number => {
+  let i:string
+  const map:any = {}
+
+  for (i in values) {
+    if (!map[values[i]]) {
+      map[values[i]] = 0
+    }
+
+    map[values[i]] += 1
+  }
+
+  const maxOccurence = Object.values(map).sort().reverse().shift()
+
+  for (let index in map) {
+    if (map[index] == maxOccurence) {
+      return parseInt(index)
+    }
+  }
+
+  return 0
+}
+
+export const group = (values: number[]): number[][] => {
+  const grouped = values.reduce((acc: number[][], value: number) => {
+    // Add number when is not present on the accumulator.
+    if (!acc.some((item: number[]) => item.includes(value))) {
+      return acc.concat([[value]])
+    }
+
+    // Add number to the array of it's group.
+    return acc.map((item: number[]) => item.includes(value) ? item.concat([value]) : item)
+  }, [])
+
+  return grouped
+}
